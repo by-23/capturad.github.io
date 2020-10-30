@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="cr-page">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tasarim</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link type="text/css" href="/tasarim/tasarim.css" rel="stylesheet">
+    <style type="text/css">
+        .cr-rain {
+            background-color: #000
+        }
+
+        .cr-message {
+            background-color: rgba(11, 77, 11, .9);
+            border-color: rgba(27, 141, 27, .9);
+            font-family: "Roboto Mono", monospace;
+            font-size: 18px;
+            color: #21e921;
+            box-shadow: 0 1px 3px transparent
+        }
+
+        .cr-context-message {
+            background-color: rgba(11, 77, 11, .9);
+            border-color: rgba(27, 141, 27, .9);
+            font-family: "Roboto Mono", monospace;
+            color: #21e921;
+            box-shadow: 0 1px 3px transparent
+        }
+
+        .cr-context-message a:hover {
+            color: #b1ffb1
+        }
+    </style>
+</head>
+
+<body class="cr-body">
+    <div id="cr-rain" class="cr-rain"><canvas></canvas><canvas></canvas></div>
+    <div id="cr-message" class="cr-message"></div>
+    <div id="cr-context-message" class="cr-context-message"></div>
+    <script type="text/javascript" src="/tasarim/tasarim.js"></script>
+    <script type="text/javascript">
+        new CodeRain_Template({
+            rain: {
+                elementId: "cr-rain",
+                characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                // characters: "诶比西迪伊艾弗吉艾尺艾杰开艾勒艾马艾娜哦屁吉吾艾儿艾丝提伊吾维豆贝尔维艾克斯吾艾贼德あいうえおはひふへほかきくけこまみむめもさしすせそやゆよたちつてとらりるれろなにぬねのわゐんゑをアイウエオカキクケコガギグゲゴサシスセソザジズゼゾタチツテトダヂヅデドナニヌネノハヒフヘホバビブベボパピプペポマミムメモヤユヨラリルレロワヲン",
+                font: "Arial, sans-serif",
+                fontSize: 8,
+                columnWidth: 8,
+                rowHeight: 8,
+                textColor: "#52FF52",
+                overlayColor: "rgba(0, 0, 0, 0.04)",
+                highlightFirstChar: "rgba(255, 255, 255, 0.8)",
+                interval: 50,
+                direction: "top-bottom",
+                showStart: !1
+            },
+            message: {
+                elementId: "cr-message",
+                textEffect: {
+                    message: "HENÜZ TASARLANIYOR",
+                    characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ0123456789",
+                    wrappers: ["[", "]"],
+                    pendingColor: "#5B9855",
+                    highlightChar: "#B1FFB1",
+                    effect: 1,
+                    interval: 50,
+                    pendingTicks: 20,
+                    characterTicks: 1,
+                    replay: !1
+                },
+                replayOnClick: !0
+            },
+            contextMessage: {
+                elementId: "cr-context-message",
+                textEffect: {
+                    message: "Created By Bayram.23",
+                    characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ0123456789",
+                    wrappers: ["[", "]"],
+                    pendingColor: "#5B9855",
+                    highlightChar: "#B1FFB1",
+                    effect: 1,
+                    interval: 50,
+                    pendingTicks: 20,
+                    characterTicks: 1,
+                    replay: !1,
+                    link: {
+                        url: "capturad.com",
+                        target: "_blank"
+                    }
+                }
+            }
+        });
+    </script>
+    <div class="logo">
+        <a href="/index.html">CAPTUR<a2>AD</a2></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'capturad';
+    src: url('../fonts/STRClassic.woff') format('woff');
+
+}
+
+body.cr-body,
+html.cr-page {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0
+}
+
+body.cr-body {
+    position: relative
+}
+
+.cr-rain {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.cr-rain canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block
+}
+
+.cr-message {
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    padding: 8px 12px;
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    cursor: default;
+    user-select: none
+}
+
+.cr-message.cr-show {
+    visibility: visible
+}
+
+.cr-context-message {
+    font-size: 13px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    padding: 4px 8px;
+    position: fixed;
+    visibility: hidden;
+    white-space: nowrap;
+    user-select: none
+}
+
+.cr-context-message.cr-show {
+    visibility: visible
+}
+
+.cr-context-message a {
+    color: inherit;
+    text-decoration: none
+}
+
+.logo {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+
+}
+
+.logo a {
+    color: white;
+    margin: 1rem auto;
+    font-family: "capturad";
+    text-decoration: none;
+}
+
+.logo a a2 {
+    color: rgb(255, 0, 0);
+}

@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'capturad';
+    src: url('fonts/STRClassic.woff') format('woff');
+    src: url('fonts/STRClassic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'font1';
+    src: url('fonts/1.ttf') format('');
+
+}
+
+@font-face {
+    font-family: 'font2';
+    src: url('fonts/2.ttf') format('truetype');
+}
+
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes blumb {
+    from {
+        transform: scaleX(1.2) skewX(5deg);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    /* background-image: url("img/1.jfif"); */
+}
+
+.splide {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.splide__slide {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.slide-text {
+    color: white;
+    display: flex;
+    margin: 0 7rem;
+    font-family: "font1";
+    font-size: 8vw;
+    background-size: 0% 100%;
+    transition: none;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding: 0 7px 14px 3px;
+    cursor: pointer;
+    pointer-events: none;
+    text-decoration: none;
+}
+
+
+.splide__slide.is-active .slide-text {
+    background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
+    background-size: 100% 100%;
+    transition: background-size 0.7s cubic-bezier(.165, .84, .44, 1);
+    pointer-events: auto;
+}
+
+.slide-text::after {
+    content: "_";
+}
+
+.splide__slide.is-active .slide-text::after {
+    animation: blink .65s infinite;
+}
+
+
+.slide-img {
+    width: 100vw;
+    height: 100vh;
+}
+
+#primary-slider {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+#primary-slider .splide__slide.is-active {
+    animation: blumb .4s cubic-bezier(.215, .61, .355, 1);
+}
+
+#secondary-slider .splide__slide {
+    width: max-content;
+    border: 0;
+}
+
+.info {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.info a {
+    font-size: large;
+    color: white;
+    font-family: "font2";
+    text-decoration: none;
+}
+
+.info2 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    margin: 2rem;
+}
+
+.info2 img {
+    margin: 0 .4rem;
+    height: 4vh;
+}
+
+.logo {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+}
+
+.logo a {
+    color: white;
+    margin: 2rem auto;
+    font-family: "capturad";
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.logo a a2 {
+    color: rgb(255, 0, 0);
+}

@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'capturad';
+    src: url('../fonts/STRClassic.woff') format('woff');
+
+}
+
+/* @keyframes logo {
+
+    0% {
+        height: 100vh;
+        font-size: 3rem;
+    }
+
+    100% {
+        font-size: 1rem;
+        height: 5vh;
+    }
+} */
+
+body {
+    margin: 0;
+    background-color: black;
+}
+
+.logo {
+    position: fixed;
+    width: 100vw;
+    height: 5vh;
+    bottom: 0;
+    font-size: 1rem;
+    display: flex;
+    /* animation: logo 1s ease-in-out 1; */
+    z-index: 10;
+}
+
+.logo a {
+    color: white;
+    margin: auto;
+    font-family: "capturad";
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.logo a a2 {
+    color: rgb(255, 0, 0);
+}
