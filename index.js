@@ -10,6 +10,7 @@ if ("ontouchstart" in document.documentElement) {
     settings.isNavigation = false;
     settings.arrows = true;
     settings.drag = true;
+    location.href = '/mobile.html';
 }
 else {
     settings.isNavigation = true;
