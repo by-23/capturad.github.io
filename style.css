@@ -101,6 +101,11 @@ body {
     position: fixed;
     top: 0;
     bottom: 0;
+    filter: blur(3px);
+}
+
+#primary-slider .splide__slide {
+    box-shadow: inset 0 0 100rem 12rem rgba(0, 0, 0, 0.6);
 }
 
 #primary-slider .splide__slide.is-active {
