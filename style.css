@@ -53,7 +53,6 @@ body {
 }
 
 .splide__slide {
-    height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -70,7 +69,6 @@ body {
     background-position: 0 100%;
     background-repeat: no-repeat;
     padding: 0 7px 14px 3px;
-    cursor: pointer;
     pointer-events: none;
     text-decoration: none;
 }
@@ -97,24 +95,26 @@ body {
     height: 100vh;
 }
 
-#primary-slider {
+#image-slider {
     position: fixed;
     top: 0;
     bottom: 0;
     filter: blur(3px);
 }
 
-#primary-slider .splide__slide {
+#image-slider .splide__slide {
     box-shadow: inset 0 0 100rem 12rem rgba(0, 0, 0, 0.6);
+    height: 100vh;
 }
 
-#primary-slider .splide__slide.is-active {
+#image-slider .splide__slide.is-active {
     animation: blumb .4s cubic-bezier(.215, .61, .355, 1);
 }
 
-#secondary-slider .splide__slide {
+#text-slider .splide__slide {
     width: max-content;
     border: 0;
+    cursor: pointer;
 }
 
 .info {

@@ -18,10 +18,10 @@ else {
 }
 
 // Create and mount the thumbnails slider.
-var secondarySlider = new Splide('#secondary-slider', settings).mount();
+var secondarySlider = new Splide('#text-slider', settings).mount();
 
 // Create the main slider.
-var primarySlider = new Splide('#primary-slider', {
+var primarySlider = new Splide('#image-slider', {
     type: 'fade',
     heightRatio: 0.5,
     pagination: false,
