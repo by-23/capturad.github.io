@@ -113,12 +113,9 @@ body {
 }
 
 .info {
-    position: fixed;
-    right: 0;
-    bottom: 0;
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin: 0rem 2rem;
 }
 
 .info a {
@@ -129,11 +126,8 @@ body {
 }
 
 .info2 {
-    position: fixed;
-    left: 0;
-    bottom: 0;
     display: flex;
-    margin: 2rem;
+    margin: 0rem 2rem;
 }
 
 .info2 img {
@@ -142,15 +136,13 @@ body {
 }
 
 .logo {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
+
     display: flex;
 }
 
 .logo a {
     color: white;
-    margin: 2rem auto;
+    margin: auto 2rem;
     font-family: "capturad";
     text-decoration: none;
     font-weight: bolder;
@@ -158,4 +150,12 @@ body {
 
 .logo a a2 {
     color: rgb(255, 0, 0);
+}
+
+footer {
+    width: 100vw;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
 }
