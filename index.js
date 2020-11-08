@@ -19,10 +19,10 @@ else {
 }
 
 // Create and mount the thumbnails slider.
-var secondarySlider = new Splide('#text-slider', settings).mount();
+var textSlider = new Splide('#text-slider', settings).mount();
 
 // Create the main slider.
-var primarySlider = new Splide('#image-slider', {
+var imageSlider = new Splide('#image-slider', {
     type: 'fade',
     heightRatio: 0.5,
     pagination: false,
@@ -33,5 +33,5 @@ var primarySlider = new Splide('#image-slider', {
 });
 
 // Set the thumbnails slider as a sync target and then call mount.
-primarySlider.sync(secondarySlider).mount();
+imageSlider.sync(textSlider).mount();
 

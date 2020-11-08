@@ -1,7 +1,9 @@
 body {
-    background-image: url(/img/1.jpg);
     background-position: center;
+    background-color: #212121;
+
 }
+
 * {
     box-sizing: border-box;
 }
@@ -15,24 +17,37 @@ body {
 body {
     margin: 0;
     padding: 0;
-	background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
-	
+
+
+}
+
+.logoimg {
+    background-image: url(finallogo.svg);
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+
+}
+
+.logoimgup {
+    padding-top: 2rem;
 }
 
 nav {
     overflow: hidden;
-    position: relative;
+    position: fixed;
     transform: translateX(-300px);
     height: 100%;
     width: 100vw;
     transition: all 800ms cubic-bezier(.8, 0, .33, 1);
     border-radius: 0% 0% 100% 50%;
+    backdrop-filter: blur(8px);
 }
 
 nav.nav-open {
     transform: translateX(0px);
     border-radius: 0% 0% 0% 0%;
-	 background: rgba(255, 255, 255, 0.6);
+
 }
 
 nav .menu-btn {
@@ -62,7 +77,7 @@ nav .menu-btn .line.line--1 {
 nav .menu-btn .line.line--1.line-cross {
     width: 30px;
     transform: rotate(45deg) translateY(10px);
-	 background: rgba(0,0,0,0.6);
+    background:#fff;
 }
 
 nav .menu-btn .line.line--2 {
@@ -84,7 +99,7 @@ nav .menu-btn .line.line--3 {
 nav .menu-btn .line.line--3.line-cross {
     width: 30px;
     transform: rotate(-45deg) translateY(-10px);
-	 background: rgba(0,0,0,0.6);
+    background:#fff;
 }
 
 nav .nav-links {
@@ -111,7 +126,7 @@ nav .nav-links .link {
     margin: 20px 0;
     text-decoration: none;
     font-family: sans-serif;
-    color: rgba(0,0,0,0.9);
+    color: #fff;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -122,13 +137,13 @@ nav .nav-links .link:hover {
     color: rgba(0, 0, 0, .5);
 }
 
-a{
-	margin: 0 20px;
-	color: #fff;
-	font-size: 2rem;
-	transition: all 400ms ease;
+a {
+    margin: 0 20px;
+    color: #fff;
+    font-size: 2rem;
+    transition: all 400ms ease;
 }
 
-a:hover{
-	color: #222;
+a:hover {
+    color: #222;
 }
