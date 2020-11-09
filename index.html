@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@latest/dist/css/splide-extension-video.min.css">
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@latest/dist/js/splide-extension-video.min.js">
+    </script>
     <link rel="stylesheet" href="style.css">
     <title>capturad</title>
     <link rel="shortcut icon" href="finallogo.svg" type="image/x-icon">
@@ -16,9 +21,11 @@
     <div id="image-slider" class="splide">
         <div class="splide__track">
             <ul class="splide__list">
-                <li class="splide__slide">
+                <!-- <li class="splide__slide">
                     <img class="slide-img" src="img/1.jpg" alt="">
-                    <!-- <video src="/capturad/video/2.mp4"></video> -->
+                </li> -->
+                <li class="splide__slide" data-splide-html-video="/video/2.mp4">
+                    <img src="/img/1.jpg">
                 </li>
                 <li class="splide__slide">
                     <img class="slide-img" src="img/2.jpg" alt="">

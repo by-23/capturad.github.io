@@ -30,8 +30,15 @@ var imageSlider = new Splide('#image-slider', {
     cover: true,
     autoWidth: true,
     autoHeight: true,
+    video: {
+        autoplay: true,
+        mute: true,
+        disableOverlayUI: true,
+        hideControls: true,
+        loop: true,
+    },
 });
 
 // Set the thumbnails slider as a sync target and then call mount.
-imageSlider.sync(textSlider).mount();
+imageSlider.sync(textSlider).mount(window.splide.Extensions);
 
