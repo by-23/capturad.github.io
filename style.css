@@ -73,7 +73,6 @@ body {
     text-decoration: none;
 }
 
-
 .splide__slide.is-active .slide-text {
     background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
     background-size: 100% 100%;
@@ -88,7 +87,6 @@ body {
 .splide__slide.is-active .slide-text::after {
     animation: blink .65s infinite;
 }
-
 
 .slide-img {
     width: 100vw;
@@ -109,6 +107,12 @@ body {
 
 #image-slider .splide__slide.is-active {
     animation: blumb .4s cubic-bezier(.215, .61, .355, 1);
+}
+
+.splide__video {
+    height: auto;
+    top: auto;
+    left: auto;
 }
 
 #text-slider .splide__slide {
