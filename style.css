@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'font1';
-    src: url('fonts/1.ttf') format('');
+    src: url('fonts/1.ttf') format('truetype');
 
 }
 
@@ -156,7 +156,6 @@ body {
 .logo a a2 {
     color: rgb(255, 0, 0);
 }
-
 
 footer {
     width: 100vw;
