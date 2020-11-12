@@ -145,25 +145,27 @@ body {
 }
 
 .logo {
-
+    margin: auto;
     display: flex;
+    margin: auto;
 }
 
 .logo a {
     color: white;
-    margin: auto 2rem;
+    margin: auto;
     font-family: "capturad";
     text-decoration: none;
     font-weight: bolder;
 }
 
 .logo a a2 {
+    margin: auto;
     color: rgb(255, 0, 0);
 }
 
 footer {
     width: 100vw;
-    bottom: 0;
+    bottom: 1rem;
     position: fixed;
     display: flex;
     justify-content: space-between;
