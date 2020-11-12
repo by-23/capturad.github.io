@@ -47,7 +47,7 @@ body {
 }
 
 .splide {
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
 }
@@ -63,7 +63,7 @@ body {
     display: flex;
     margin: 0 7rem;
     font-family: "font1";
-    font-size: 8vw;
+    font-size: 12vw;
     background-size: 0% 100%;
     transition: none;
     background-position: 0 100%;
@@ -169,4 +169,8 @@ footer {
     position: fixed;
     display: flex;
     justify-content: space-between;
+}
+
+.splide__arrow {
+    display: none;
 }
