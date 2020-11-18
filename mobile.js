@@ -1,43 +1,41 @@
-var settings = {
-    cover: false,
-    focus: 'center',
-    autoWidth: true,
-    updateOnMove: true,
-    pagination: false,
-    type: 'loop',
-}
-if ("ontouchstart" in document.documentElement) {
-    settings.isNavigation = false;
-    settings.arrows = true;
-    settings.drag = true;
-}
-else {
-    settings.isNavigation = true;
-    settings.arrows = false;
-    settings.drag = false;
-}
-
-// Create and mount the thumbnails slider.
-var textSlider = new Splide('#text-slider', settings).mount();
-
-// Create the main slider.
-var imageSlider = new Splide('#image-slider', {
-    type: 'fade',
-    heightRatio: 0.5,
-    pagination: false,
-    arrows: false,
-    cover: true,
-    autoWidth: true,
-    autoHeight: true,
-    video: {
-        autoplay: true,
-        mute: true,
-        disableOverlayUI: true,
-        hideControls: true,
-        loop: true,
+var imageSwiper = new Swiper('#image-swiper', {
+    preloadImages: false,
+    lazy: {
+        loadPrevNext: true,
     },
+    effect: 'fade',
+})
 
-});
+var textSwiper = new Swiper('#text-swiper', {
+    loop: true,
+    loopedSlides: 3,
+    slidesPerView: '2',
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    mousewheel: true,
+    direction: getDirection(),
+    effect: 'coverflow',
+    on: {
+        resize: function () {
+            textSwiper.changeDirection(getDirection());
+        },
+        slideChange: function (swiper) {
+            imageSwiper.slideTo(swiper.realIndex);
+        }
+    },
+    passiveListeners: false,
+})
 
-// Set the thumbnails slider as a sync target and then call mount.
-imageSlider.sync(textSlider).mount(window.splide.Extensions);
+function getDirection() {
+    if (window.innerWidth <= window.innerHeight) {
+        document.querySelectorAll('.swiper-slide-shadow-left, .swiper-slide-shadow-right').forEach(element => {
+            element.remove();
+        });
+        return 'vertical'
+    } else {
+        document.querySelectorAll('.swiper-slide-shadow-top, .swiper-slide-shadow-bottom').forEach(element => {
+            element.remove();
+        });
+        return 'horizontal'
+    }
+}

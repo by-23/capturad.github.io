@@ -1,18 +1,81 @@
 @font-face {
-    font-family: 'capturad';
-    src: url('fonts/STRClassic.woff') format('woff');
-    src: url('fonts/STRClassic.woff2') format('woff2');
+    font-family: 'Barlow Condensed SemiBold';
+    src: url('../fonts/1.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'font1';
-    src: url('fonts/1.ttf') format('truetype');
-
+    font-family: 'Hind';
+    src: url('../fonts/2.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'font2';
-    src: url('fonts/2.ttf') format('truetype');
+body {
+    height: 100vh;
+    margin: 0;
+    /* background: url(../img/1.jpg);
+    background-position: center;
+    background-size: cover; */
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    cursor: pointer;
+}
+
+#text-swiper {
+    position: fixed;
+    top: 0;
+}
+
+.slide-text {
+    text-decoration: none;
+    margin: 0 auto;
+    font-family: 'Barlow Condensed SemiBold';
+    color: #000;
+    /* background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
+    background-size: 0% 100%;
+    background-repeat: no-repeat; */
+    pointer-events: none;
+    touch-action: none;
+    user-select: none;
+    border-radius: 2rem;
+    mix-blend-mode: screen;
+    transition: 1s ease-in-out;
+    backdrop-filter: invert(0);
+    /* transition: none; */
+}
+
+
+@media (orientation:landscape) {
+    .slide-text {
+        font-size: 7vw;
+    }
+}
+
+@media (orientation:portrait) {
+    .slide-text {
+        font-size: 7vh;
+    }
+}
+
+.swiper-slide-active .slide-text {
+    background-size: 100% 100%;
+    pointer-events: all;
+    touch-action: auto;
+    backdrop-filter: invert(1);
+    /* transition: background-size .7s cubic-bezier(.165, .84, .44, 1); */
 }
 
 
@@ -28,149 +91,10 @@
     }
 }
 
-@keyframes blumb {
-    from {
-        transform: scaleX(1.2) skewX(5deg);
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-}
-
-
-body {
-    margin: 0;
-    height: 100vh;
-    background-color: black;
-    /* background-image: url("img/1.jfif"); */
-}
-
-.splide {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.splide__slide {
-    width: 100vw;
-    display: flex;
-    align-items: center;
-}
-
-.slide-text {
-    color: white;
-    display: flex;
-    margin: 0 7rem;
-    font-family: "font1";
-    font-size: 12vw;
-    background-size: 0% 100%;
-    transition: none;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    padding: 0 7px 14px 3px;
-    pointer-events: none;
-    text-decoration: none;
-}
-
-.splide__slide.is-active .slide-text {
-    background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
-    background-size: 100% 100%;
-    transition: background-size 0.7s cubic-bezier(.165, .84, .44, 1);
-    pointer-events: auto;
-}
-
 .slide-text::after {
     content: "_";
 }
 
-.splide__slide.is-active .slide-text::after {
+.swiper-slide-active .slide-text::after {
     animation: blink .65s infinite;
-}
-
-.slide-img {
-    width: 100vw;
-    height: 100vh;
-}
-
-#image-slider {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    filter: blur(3px);
-}
-
-#image-slider .splide__slide {
-    box-shadow: inset 0 0 100rem 12rem rgba(0, 0, 0, 0.6);
-    height: 100vh;
-}
-
-#image-slider .splide__slide.is-active {
-    animation: blumb .4s cubic-bezier(.215, .61, .355, 1);
-}
-
-.splide__video {
-    height: auto;
-    top: auto;
-    left: auto;
-}
-
-#text-slider .splide__slide {
-    width: max-content;
-    border: 0;
-    cursor: pointer;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    margin: 0rem 2rem;
-}
-
-.info a {
-    font-size: large;
-    color: white;
-    font-family: "font2";
-    text-decoration: none;
-}
-
-.info2 {
-    display: flex;
-    margin: 0rem 2rem;
-}
-
-.info2 img {
-    margin: 0 .4rem;
-    height: 4vh;
-}
-
-.logo {
-    margin: auto;
-    display: flex;
-    margin: auto;
-}
-
-.logo a {
-    color: white;
-    margin: auto;
-    font-family: "capturad";
-    text-decoration: none;
-    font-weight: bolder;
-}
-
-.logo a a2 {
-    margin: auto;
-    color: rgb(255, 0, 0);
-}
-
-footer {
-    width: 100vw;
-    bottom: 1rem;
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-}
-
-.splide__arrow {
-    display: none;
 }

@@ -1,3 +1,7 @@
+if ("ontouchstart" in document.documentElement) {
+    location.href = '/mobile.html';
+}
+
 var settings = {
     cover: false,
     focus: 'center',
@@ -5,17 +9,10 @@ var settings = {
     updateOnMove: true,
     pagination: false,
     type: 'loop',
-}
-if ("ontouchstart" in document.documentElement) {
-    settings.isNavigation = false;
-    settings.arrows = true;
-    settings.drag = true;
-    location.href = '/mobile.html';
-}
-else {
-    settings.isNavigation = true;
-    settings.arrows = false;
-    settings.drag = false;
+    isNavigation: true,
+    arrows: false,
+    drag: false,
+	lazyLoad: 'nearby',
 }
 
 // Create and mount the thumbnails slider.

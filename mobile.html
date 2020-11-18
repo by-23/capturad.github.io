@@ -5,66 +5,52 @@
     <meta charset="UTF-8">
     <meta name="yandex-verification" content="0c5e6553c296f20a" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@latest/dist/css/splide-extension-video.min.css">
-    <script
-        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@latest/dist/js/splide-extension-video.min.js">
-    </script>
-    <link rel="stylesheet" href="mobile.css">
     <title>capturad</title>
     <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body>
-    <div id="image-slider" class="splide">
-        <div class="splide__track">
-            <ul class="splide__list">
-                <li class="splide__slide">
-                    <img class="slide-img" src="img/1.jpg" alt="">
-                </li>
-                <li class="splide__slide">
-                    <img class="slide-img" src="img/2.jpg" alt="">
-                </li>
-                <li class="splide__slide">
-                    <img class="slide-img" src="img/3.jpg" alt="">
-                </li>
-                <li class="splide__slide">
-                    <img class="slide-img" src="img/4.jpg" alt="">
-                </li>
-                <li class="splide__slide">
-                    <img class="slide-img" src="img/5.jpg" alt="">
-                </li>
-            </ul>
+    <div id="image-swiper" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div data-background="../img/6.png" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div data-background="../img/2.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div data-background="../img/3.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div data-background="../img/4.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div data-background="../img/5.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
         </div>
     </div>
-    <div id="text-slider" class="splide">
-        <div class="splide__track">
-            <ul class="splide__list">
-                <li class="splide__slide">
-                    <a href="/video/" class="slide-text">VIDEO ÇEKİM</a>
-                </li>
-                <li class="splide__slide">
-                    <a href="/photo/" class="slide-text">FOTOĞRAF ÇEKİM</a>
-                </li>
-                <li class="splide__slide">
-                    <a href="/tasarim/" class="slide-text">WEB TASARIM</a>
-                </li>
-                <li class="splide__slide">
-                    <a class="slide-text">HAKKIMIZDA</a>
-                </li>
-                <li class="splide__slide">
-                    <a href="/ContactUs/" class="slide-text">BIZE ULAŞIN</a>
-                </li>
-            </ul>
+    <div id="text-swiper" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a class="slide-text" href="../video/">VİDEO ÇEKİM</a>
+            </div>
+            <div class="swiper-slide">
+                <a class="slide-text" href="../photo/">FOTOĞRAF ÇEKİM</a>
+            </div>
+            <div class="swiper-slide">
+                <a class="slide-text" href="../tasarim/">WEB TASARIM</a>
+            </div>
+            <div class="swiper-slide">
+                <a class="slide-text" href="../ContactUs/">HAKKIMIZDA</a>
+            </div>
+            <div class="swiper-slide">
+                <a class="slide-text" href="../ContactUs/">BİZE ULAŞIN</a>
+            </div>
         </div>
     </div>
-    <footer>
-        <div class="logo">
-            <a href="">CAPTUR<a2>AD</a2></a>
-        </div>
-    </footer>
 </body>
 <script src="mobile.js"></script>
 
