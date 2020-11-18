@@ -1,7 +1,6 @@
 @font-face {
-    font-family: 'capturad';
-    src: url('fonts/STRClassic.woff') format('woff');
-    src: url('fonts/STRClassic.woff2') format('woff2');
+    font-family: 'california';
+    src: url('fonts/SFUIDisplay-Light.woff') format('woff');
 }
 
 @font-face {
@@ -11,8 +10,8 @@
 }
 
 @font-face {
-    font-family: 'font2';
-    src: url('fonts/2.ttf') format('truetype');
+    font-family: 'Hind';
+    src: url('fonts/Hind.ttf') format('truetype');
 }
 
 
@@ -44,6 +43,12 @@ body {
     height: 100vh;
     background-color: black;
     /* background-image: url("img/1.jfif"); */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .splide {
@@ -109,55 +114,10 @@ body {
     animation: blumb .4s cubic-bezier(.215, .61, .355, 1);
 }
 
-.splide__video {
-    height: auto;
-    top: auto;
-    left: auto;
-}
-
 #text-slider .splide__slide {
     width: max-content;
     border: 0;
     cursor: pointer;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    margin: 0rem 2rem;
-}
-
-.info a {
-    font-size: large;
-    color: white;
-    font-family: "font2";
-    text-decoration: none;
-}
-
-.info2 {
-    display: flex;
-    margin: 0rem 2rem;
-}
-
-.info2 img {
-    margin: 0 .4rem;
-    height: 4vh;
-}
-
-.logo {
-    display: flex;
-}
-
-.logo a {
-    color: white;
-    margin: auto 2rem;
-    font-family: "capturad";
-    text-decoration: none;
-    font-weight: bolder;
-}
-
-.logo a a2 {
-    color: rgb(255, 0, 0);
 }
 
 footer {
@@ -167,3 +127,77 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
+.social {
+    display: flex;
+    margin: 0 2rem;
+}
+
+.social a svg {
+    width: auto;
+    height: 4vh;
+    color: #fff;
+    padding-right: 1rem;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo a {
+    color: white;
+    margin: auto 2rem;
+    font-size: larger;
+    font-family: "Hind";
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.logo a a2 {
+    color: red;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+}
+
+.info a {
+    font-size: large;
+    color: white;
+    font-family: "Hind";
+    text-decoration: none;
+}
+
+#button-open-dialog {
+    position: fixed;
+    top: 0;
+    outline: none;
+    padding: 12px 30px;
+    margin: 10px 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: "california";
+    background-color: transparent;
+    background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
+    background-size: 0% 100%;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(255, 255, 255, .6);
+    transition: background-size 0.7s cubic-bezier(.165, .84, .44, 1);
+    cursor: pointer;
+}
+
+#button-open-dialog:hover {
+    background-size: 100% 100%;
+}
+
+/* .button a::after {
+    content: "";
+}
+
+.button a:hover::after {
+    content: "_";
+    animation: blink .65s infinite;
+} */
