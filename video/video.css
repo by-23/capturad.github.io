@@ -1,9 +1,3 @@
-@font-face {
-    font-family: 'capturad';
-    src: url('../fonts/STRClassic.woff') format('woff');
-
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -12,13 +6,14 @@ body {
     backdrop-filter: blur(4px);
 }
 
-.splide__video div {
-    display: flex;
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-video {
-    height: auto !important;
-    margin: auto;
+.splide__video div {
+    display: flex;
 }
 
 .logo {
@@ -32,7 +27,7 @@ video {
 .logo a {
     color: white;
     margin: 1rem auto;
-    font-family: "capturad";
+    font-family: "Hind";
     text-decoration: none;
     font-weight: bolder;
 }
@@ -60,11 +55,6 @@ video {
     transition: all 300ms ease-in-out;
     z-index: -1;
     opacity: 0;
-}
-
-.items .item video {
-    height: inherit;
-    width: inherit;
 }
 
 .item img {

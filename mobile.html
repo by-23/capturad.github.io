@@ -3,34 +3,116 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="0c5e6553c296f20a" />
-    <link rel="shortcut icon" href="/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="mobile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>capturad</title>
+    <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="dialog.css">
 </head>
 
 <body>
-    <nav>
-        <div class="menu-btn">
-            <div class="line line--1"></div>
-            <div class="line line--2"></div>
-            <div class="line line--3"></div>
-        </div>
+    <div id="dialog">
+        <form action='' id='form'>
+            <p class='field required'>
+                <label class='label required'>Ad Soyad</label>
+                <input class='text-input' id='name' name='name' required type='text' value=''>
+            </p>
+            <p class='field required half'>
+                <label class='label'>E-posta</label>
+                <input class='text-input' id='email' name='email' required type='email'>
+            </p>
+            <p class='field half'>
+                <label class='label'>Telefon</label>
+                <input class='text-input' id='phone' name='phone' type='phone'>
+            </p>
+            <div class='field'>
+                <label class='label'>Almak İstediğiniz Türü</label>
+                <ul class='checkboxes'>
+                    <li class='checkbox'>
+                        <input class='checkbox-input' id='choice-0' name='choice' type='checkbox' value='0'>
+                        <label class='checkbox-label' for='choice-0'>Fotoğraf Çekim</label>
+                    </li>
+                    <li class='checkbox'>
+                        <input class='checkbox-input' id='choice-1' name='choice' type='checkbox' value='1'>
+                        <label class='checkbox-label' for='choice-1'>Video Çekim</label>
+                    </li>
+                    <li class='checkbox'>
+                        <input class='checkbox-input' id='choice-2' name='choice' type='checkbox' value='2'>
+                        <label class='checkbox-label' for='choice-2'>Web Tasaım</label>
+                    </li>
+                    <li class='checkbox'>
+                        <input class='checkbox-input' id='choice-3' name='choice' type='checkbox' value='3'>
+                        <label class='checkbox-label' for='choice-3'>Sosyal Medya Yönetim</label>
+                    </li>
+                    <li class='checkbox'>
+                        <input class='checkbox-input' id='choice-4' name='choice' type='checkbox' value='4'>
+                        <label class='checkbox-label' for='choice-4'>Başka</label>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="nav-links">
-            <a href="" class="link">Ana sayfa</a>
-            <a href="http://youtube.com/capturad" class="link">VIDEO ÇEKİM</a>
-            <a href="/photo/" class="link">FOTOĞRAF ÇEKİM</a>
-            <a href="/tasarim/" class="link">WEB TASARIM</a>
-            <a href="" class="link">HAKKIMIZDA</a>
-            <a href="/ContactUs/" class="link">BIZE ULAŞIN</a>
+            <p class='field'>
+                <label class='label'>Mesajınız</label>
+                <textarea class='textarea' cols='50' id='about' name='about' rows='4'></textarea>
+            </p>
+            <p class='field half'>
+                <label class='label'>Almak İstediğiniz Hizmet</label>
+                <select class='select' id='select'>
+                    <option selected value=''></option>
+                    <option value='ceo'>Tanıtım Video</option>
+                    <option value='front-end'>Reklam Video</option>
+                    <option value='back-end'>Etkinlik Çeikimi</option>
+                </select>
+            </p>
+            <p class='field half'>
+                <input class='button' type='submit' value='Gönder'>
+            </p>
+        </form>
+    </div>
+    <div id="image-swiper" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div data-background="../img/6.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div data-background="../img/2.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div data-background="../img/3.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div data-background="../img/4.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div data-background="../img/5.jpg" class="swiper-slide swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
         </div>
-    </nav>
-    <div class="logoimgup">
-        <div class="logoimg"></div>
+    </div>
+    <div id="text-swiper" class="swiper-container">
+        <button id="button-open-dialog">Teklif Al</button>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a class="slide-text" href="../video/">VİDEO ÇEKİM</a>
+            </div>
+            <div class="swiper-slide">
+                <a class="slide-text" href="../photo/">FOTOĞRAF ÇEKİM</a>
+            </div>
+            <div class="swiper-slide">
+                <a class="slide-text" href="../tasarim/">WEB TASARIM</a>
+            </div>
+            <div class="swiper-slide">
+                <a class="slide-text" href="../ContactUs/">HAKKIMIZDA</a>
+            </div>
+            <div class="swiper-slide">
+                <a class="slide-text" href="../ContactUs/">BİZE ULAŞIN</a>
+            </div>
+        </div>
     </div>
 </body>
 <script src="mobile.js"></script>
+<script src="dialog.js"></script>
 
 </html>

@@ -1,28 +1,23 @@
-var settings = {
+if ("ontouchstart" in document.documentElement) {
+    location.href = '/mobile.html';
+}
+
+// Create and mount the thumbnails slider.
+const textSlider = new Splide('#text-slider', {
     cover: false,
     focus: 'center',
     autoWidth: true,
     updateOnMove: true,
     pagination: false,
     type: 'loop',
-}
-if ("ontouchstart" in document.documentElement) {
-    settings.isNavigation = false;
-    settings.arrows = true;
-    settings.drag = true;
-    location.href = '/mobile.html';
-}
-else {
-    settings.isNavigation = true;
-    settings.arrows = false;
-    settings.drag = false;
-}
-
-// Create and mount the thumbnails slider.
-var textSlider = new Splide('#text-slider', settings).mount();
+    isNavigation: true,
+    arrows: false,
+    drag: false,
+    lazyLoad: 'nearby',
+}).mount();
 
 // Create the main slider.
-var imageSlider = new Splide('#image-slider', {
+const imageSlider = new Splide('#image-slider', {
     type: 'fade',
     heightRatio: 0.5,
     pagination: false,
@@ -42,3 +37,16 @@ var imageSlider = new Splide('#image-slider', {
 // Set the thumbnails slider as a sync target and then call mount.
 imageSlider.sync(textSlider).mount(window.splide.Extensions);
 
+const form = document.querySelector('#form');
+
+function sendEmail() {
+    Email.send({
+        SecureToken: "b2b700d0-edb4-42f2-b1ca-6401853c37de",
+        To: 'ekrem.bayram@mail.ru',
+        From: 'ekrem.bayram@mail.ru',
+        Subject: form.querySelector('select').value,
+        Body: form.querySelector('textarea').value,
+    }).then(
+        message => alert(message)
+    );
+}

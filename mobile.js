@@ -1,13 +1,41 @@
-var menuBtn = document.querySelector('.menu-btn');
-var nav = document.querySelector('nav');
-var lineOne = document.querySelector('nav .menu-btn .line--1');
-var lineTwo = document.querySelector('nav .menu-btn .line--2');
-var lineThree = document.querySelector('nav .menu-btn .line--3');
-var link = document.querySelector('nav .nav-links');
-menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('nav-open');
-    lineOne.classList.toggle('line-cross');
-    lineTwo.classList.toggle('line-fade-out');
-    lineThree.classList.toggle('line-cross');
-    link.classList.toggle('fade-in');
+var imageSwiper = new Swiper('#image-swiper', {
+    preloadImages: false,
+    lazy: {
+        loadPrevNext: true,
+    },
+    effect: 'fade',
 })
+
+var textSwiper = new Swiper('#text-swiper', {
+    loop: true,
+    loopedSlides: 3,
+    slidesPerView: '2',
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    mousewheel: true,
+    direction: getDirection(),
+    effect: 'coverflow',
+    on: {
+        resize: function () {
+            textSwiper.changeDirection(getDirection());
+        },
+        slideChange: function (swiper) {
+            imageSwiper.slideTo(swiper.realIndex);
+        }
+    },
+    passiveListeners: false,
+})
+
+function getDirection() {
+    if (window.innerWidth <= window.innerHeight) {
+        document.querySelectorAll('.swiper-slide-shadow-left, .swiper-slide-shadow-right').forEach(element => {
+            element.remove();
+        });
+        return 'vertical'
+    } else {
+        document.querySelectorAll('.swiper-slide-shadow-top, .swiper-slide-shadow-bottom').forEach(element => {
+            element.remove();
+        });
+        return 'horizontal'
+    }
+}
