@@ -15,6 +15,20 @@ dialog.onclick = (ev) => {
     }
 }
 
+const form = document.querySelector('#form');
+
+function sendEmail() {
+    Email.send({
+        SecureToken: "3285c075-702c-4398-8dc8-b54ef499a7db",
+        To: 'info@capturad.com',
+        From: 'info@capturad.com',
+        Subject: form.querySelector('select').value,
+        Body: form.querySelector('textarea').value,
+    }).then(
+        message => alert(message)
+    );
+}
+
 (function () {
     var magicFocus;
 
