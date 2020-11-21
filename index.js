@@ -36,3 +36,17 @@ const imageSlider = new Splide('#image-slider', {
 
 // Set the thumbnails slider as a sync target and then call mount.
 imageSlider.sync(textSlider).mount(window.splide.Extensions);
+
+const form = document.querySelector('#form');
+
+function sendEmail() {
+    Email.send({
+        SecureToken: "b2b700d0-edb4-42f2-b1ca-6401853c37de",
+        To: 'ekrem.bayram@mail.ru',
+        From: 'ekrem.bayram@mail.ru',
+        Subject: form.querySelector('select').value,
+        Body: form.querySelector('textarea').value,
+    }).then(
+        message => alert(message)
+    );
+}
