@@ -24,13 +24,13 @@
 <body>
     <div id="dialog">
         <form id='form'>
-            <p class='field required'>
-                <label class='label required'>Ad Soyad</label>
-                <input class='text-input' id='name' name='name' required type='text' value=''>
+            <p class='field'>
+                <label class='label'>Ad Soyad</label>
+                <input class='text-input' id='name' name='name' type='text' value=''>
             </p>
-            <p class='field required half'>
+            <p class='field half'>
                 <label class='label'>E-posta</label>
-                <input class='text-input' id='email' name='_replyto' required type='email'>
+                <input class='text-input' id='email' name='_replyto' type='email'>
             </p>
             <p class='field half'>
                 <label class='label'>Telefon</label>
@@ -49,7 +49,7 @@
                     </li>
                     <li class='checkbox'>
                         <input class='checkbox-input' id='choice-2' name='choice' type='checkbox' value='2'>
-                        <label class='checkbox-label' for='choice-2'>Web Tasaım</label>
+                        <label class='checkbox-label' for='choice-2'>Web Tasarım</label>
                     </li>
                     <li class='checkbox'>
                         <input class='checkbox-input' id='choice-3' name='choice' type='checkbox' value='3'>
@@ -64,19 +64,10 @@
 
             <p class='field'>
                 <label class='label'>Mesajınız</label>
-                <textarea class='textarea' cols='50' id='about' name='about' rows='4'></textarea>
+                <textarea class='textarea' id='about' name='about' rows='5'></textarea>
             </p>
-            <p class='field half'>
-                <label class='label'>Almak İstediğiniz Hizmet</label>
-                <select class='select' id='select'>
-                    <option selected value=''></option>
-                    <option value='ceo'>Tanıtım Video</option>
-                    <option value='front-end'>Reklam Video</option>
-                    <option value='back-end'>Etkinlik Çeikimi</option>
-                </select>
-            </p>
-            <p class='field half'>
-                <input class='button' onclick="sendEmail()" value='Gönder'>
+            <p class='field'>
+                <button type="button" class='button' onclick="sendEmail()">Gönder</button>
             </p>
         </form>
     </div>

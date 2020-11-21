@@ -18,15 +18,40 @@ dialog.onclick = (ev) => {
 const form = document.querySelector('#form');
 
 function sendEmail() {
-    Email.send({
-        SecureToken: "3285c075-702c-4398-8dc8-b54ef499a7db",
-        To: 'info@capturad.com',
-        From: 'info@capturad.com',
-        Subject: form.querySelector('select').value,
-        Body: form.querySelector('textarea').value,
-    }).then(
-        message => alert(message)
-    );
+    var isAllDone = true;
+
+    form.querySelectorAll('input, textarea').forEach(input => {
+        if (input.value.trim() == '') {
+            isAllDone = false;
+        }
+        input.classList.toggle('error', input.value.trim() == '');
+
+        input.onchange = function () {
+            input.classList.toggle('error', input.value.trim() == '');
+        }
+    });
+    var isNoOneChecked = true;
+
+    form.querySelectorAll('input[type="checkbox"').forEach(checkbox => {
+        if (checkbox.checked) {
+            isNoOneChecked = false;
+        }
+    });
+
+    form.querySelector('ul').parentElement.classList.toggle('error', isNoOneChecked);
+
+    if (isAllDone && !isNoOneChecked) {
+        alert('OK!')
+        // Email.send({
+        //     SecureToken: "3285c075-702c-4398-8dc8-b54ef499a7db",
+        //     To: 'info@capturad.com',
+        //     From: 'info@capturad.com',
+        //     Subject: form.querySelector('select').value,
+        //     Body: form.querySelector('textarea').value,
+        // }).then(
+        //     message => alert(message)
+        // );
+    }
 }
 
 (function () {
