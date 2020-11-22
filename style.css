@@ -128,42 +128,51 @@ footer {
     justify-content: space-between;
 }
 
-.social {
+footer .social,
+footer .logo,
+footer .info {
     display: flex;
-    margin: 0 2rem;
+    margin: auto;
 }
 
-.social a svg {
+footer .social {
+    margin-right: 0;
+    margin-left: 2.5vw;
+}
+
+footer .social a svg {
     width: auto;
     height: 4vh;
     color: #fff;
     padding-right: 1rem;
 }
 
-.logo {
-    display: flex;
+footer .logo {
+    position: fixed;
+    width: 100%;
+    align-self: center;
 }
 
-.logo a {
+footer .logo a {
+    margin: auto;
     color: white;
-    margin: auto 2rem;
     font-size: larger;
     font-family: "Hind";
     text-decoration: none;
     font-weight: bolder;
 }
 
-.logo a a2 {
+footer .logo a a2 {
     color: red;
 }
 
-.info {
-    display: flex;
+footer .info {
     flex-direction: column;
-    margin: 2 2rem;
+    margin-right: 2vw;
+    margin-left: 0;
 }
 
-.info a {
+footer .info a {
     font-size: large;
     color: white;
     font-family: "Hind";
@@ -179,6 +188,7 @@ footer {
     color: white;
     font-size: 1.2rem;
     font-family: "california";
+    border-radius: 0;
     background-color: transparent;
     background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
     background-size: 0% 100%;
@@ -193,11 +203,12 @@ footer {
     background-size: 100% 100%;
 }
 
-/* .button a::after {
-    content: "";
+#button-open-dialog::after {
+    content: "_";
+    opacity: 0;
 }
 
-.button a:hover::after {
+#button-open-dialog:hover::after {
     content: "_";
     animation: blink .65s infinite;
-} */
+}
