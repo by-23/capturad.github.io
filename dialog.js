@@ -16,32 +16,51 @@ dialog.onclick = (ev) => {
 }
 
 const form = document.querySelector('#form');
+const checkboxList = form.querySelector('ul');
 
-function sendEmail() {
-    var isAllDone = true;
-
-    form.querySelectorAll('input, textarea').forEach(input => {
-        if (input.value.trim() == '') {
-            isAllDone = false;
-        }
-        input.classList.toggle('error', input.value.trim() == '');
-
-        input.onchange = function () {
-            input.classList.toggle('error', input.value.trim() == '');
-        }
-    });
+function verifyCheckboxes() {
     var isNoOneChecked = true;
 
-    form.querySelectorAll('input[type="checkbox"').forEach(checkbox => {
+    checkboxList.querySelectorAll('input[type="checkbox"').forEach(checkbox => {
         if (checkbox.checked) {
             isNoOneChecked = false;
         }
     });
 
-    form.querySelector('ul').parentElement.classList.toggle('error', isNoOneChecked);
+    checkboxList.classList.toggle('error', isNoOneChecked);
 
-    if (isAllDone && !isNoOneChecked) {
-        alert('OK!')
+    return isNoOneChecked;
+}
+
+function verifyInput(input) {
+    input.classList.toggle('error', !input.validity.valid);
+    input.value = input.value.trim();
+    input.setAttribute('value', input.value.trim());
+}
+
+function sendEmail() {
+    var isAllDone = true;
+
+    form.querySelectorAll('input, textarea').forEach(input => {
+        if (input.type == 'checkbox') {
+            input.onchange = verifyCheckboxes;
+        }
+        else {
+            if (!input.validity.valid) {
+                isAllDone = false;
+            }
+            verifyInput(input);
+
+            input.onchange = function () {
+                verifyInput(input);
+            }
+        }
+    });
+
+    verifyCheckboxes();
+
+    if (isAllDone && !verifyCheckboxes()) {
+        alert('OK!');
         // Email.send({
         //     SecureToken: "3285c075-702c-4398-8dc8-b54ef499a7db",
         //     To: 'info@capturad.com',
