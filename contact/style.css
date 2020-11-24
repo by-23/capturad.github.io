@@ -1,0 +1,402 @@
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(/fonts/Montserrat-Regular.ttf)
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(/fonts/Montserrat-Bold.ttf)
+}
+
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url(/fonts/Montserrat-ExtraBold.ttf)
+}
+
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url(/fonts/Montserrat-Regular.ttf)
+}
+
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url(/fonts/Montserrat-Regular.ttf)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+body,
+html {
+  height: 100%;
+  font-family: Montserrat-Regular, sans-serif
+}
+
+a {
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+  transition: all .4s;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  -moz-transition: all .4s
+}
+
+a:focus {
+  outline: 0 !important
+}
+
+a:hover {
+  text-decoration: none;
+  color: #57b846
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0
+}
+
+svg {
+  height: 15px
+}
+
+:not(:focus):not(:active).error {
+  background-size: 8px 8px;
+  background-image: linear-gradient(135deg, rgba(232, 71, 76, 0.5), rgba(232, 71, 76, 0.5) 25%, transparent 25%, transparent 50%, rgba(232, 71, 76, 0.5) 50%, rgba(232, 71, 76, 0.5) 75%, transparent 75%, transparent);
+  background-repeat: repeat;
+  background-color: darkred;
+  transition: .15s ease-in-out;
+}
+
+input {
+  outline: 0;
+  border: none
+}
+
+textarea {
+  outline: 0;
+  border: none;
+  resize: none
+}
+
+input:focus,
+textarea:focus {
+  border-color: transparent !important
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent
+}
+
+input:focus:-moz-placeholder {
+  color: transparent
+}
+
+input:focus::-moz-placeholder {
+  color: transparent
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent
+}
+
+textarea:focus::-webkit-input-placeholder {
+  color: transparent
+}
+
+textarea:focus:-moz-placeholder {
+  color: transparent
+}
+
+textarea:focus::-moz-placeholder {
+  color: transparent
+}
+
+textarea:focus:-ms-input-placeholder {
+  color: transparent
+}
+
+input::-webkit-input-placeholder {
+  color: #aaa
+}
+
+input:-moz-placeholder {
+  color: #aaa
+}
+
+input::-moz-placeholder {
+  color: #aaa
+}
+
+input:-ms-input-placeholder {
+  color: #aaa
+}
+
+textarea::-webkit-input-placeholder {
+  color: #aaa
+}
+
+textarea:-moz-placeholder {
+  color: #aaa
+}
+
+textarea::-moz-placeholder {
+  color: #aaa
+}
+
+textarea:-ms-input-placeholder {
+  color: #aaa
+}
+
+button {
+  outline: 0 !important;
+  border: none;
+  background: 0 0
+}
+
+button:hover {
+  cursor: pointer
+}
+
+.bg-contact100 {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover
+}
+
+.container-contact100 {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #2195f3d7
+}
+
+.wrap-contact100 {
+  width: 95vw;
+  height: 95vh;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center
+}
+
+.contact100-pic {
+  width: 310px
+}
+
+.contact100-pic img {
+  max-width: 100%
+}
+
+.contact100-form {
+  width: 390px
+}
+
+.contact100-form-title {
+  display: block;
+  font-family: Montserrat-ExtraBold;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.2;
+  text-align: left;
+  padding-bottom: 36px
+}
+
+input.input100 {
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px 0 50px
+}
+
+input.input100[name=email] {
+  padding: 0 30px 0 54px
+}
+
+textarea.input100 {
+  min-height: 150px;
+  border-radius: 25px;
+  padding: 14px 30px
+}
+
+.wrap-input100 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 10px
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: #e6e6e6;
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666
+}
+
+.focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0;
+  color: #2195f3d7
+}
+
+.input100:focus+.focus-input100 {
+  -webkit-animation: anim-shadow .5s ease-in-out forwards;
+  animation: anim-shadow .5s ease-in-out forwards
+}
+
+@-webkit-keyframes anim-shadow {
+  to {
+    box-shadow: 0 0 60px 25px;
+    opacity: 0
+  }
+}
+
+@keyframes anim-shadow {
+  to {
+    box-shadow: 0 0 60px 25px;
+    opacity: 0
+  }
+}
+
+.symbol-input100 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 30px;
+  pointer-events: none;
+  color: #aaa;
+  font-size: 15px;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  -moz-transition: all .4s;
+  transition: all .4s
+}
+
+.input100:focus+.focus-input100+.symbol-input100 {
+  color: #2195f3d7;
+  padding-left: 22px
+}
+
+.container-contact100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px
+}
+
+.contact100-form-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background: #2195f3d7;
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  -moz-transition: all .4s;
+  transition: all .4s
+}
+
+.contact100-form-btn:hover {
+  background: #333
+}
+
+@media (max-width:1200px) {
+  .contact100-pic {
+    width: 33.5%
+  }
+
+  .contact100-form {
+    width: 44%
+  }
+}
+
+@media (max-width:992px) {
+  .contact100-pic {
+    width: 35%
+  }
+
+  .contact100-form {
+    width: 55%
+  }
+}
+
+@media (max-width:768px) {
+  .wrap-contact100 {
+    padding: 110px 80px 157px 80px
+  }
+
+  .contact100-pic {
+    display: none
+  }
+
+  .contact100-form {
+    width: 100%
+  }
+}
+
+@media (max-width:576px) {
+  .wrap-contact100 {
+    padding: 110px 15px 157px 15px
+  }
+}
+
+.validate-input {
+  position: relative
+}

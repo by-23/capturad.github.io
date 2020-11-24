@@ -7,29 +7,38 @@ function toggleDialog() {
     content.classList.toggle('zoom-out', !content.classList.contains('zoom-out'));
 }
 
-buttonOpenDialog.onclick = toggleDialog;
-
-dialog.onclick = (ev) => {
-    if (ev.target == dialog) {
-        toggleDialog();
+if (buttonOpenDialog) {
+    buttonOpenDialog.onclick = toggleDialog;
+}
+if (dialog) {
+    dialog.onclick = (ev) => {
+        if (ev.target == dialog) {
+            toggleDialog();
+        }
     }
 }
 
-const form = document.querySelector('#form');
-const checkboxList = form.querySelector('ul');
+const form = document.querySelector('form');
 
 function verifyCheckboxes() {
-    var isNoOneChecked = true;
+    const checkboxList = form.querySelector('ul');
 
-    checkboxList.querySelectorAll('input[type="checkbox"').forEach(checkbox => {
-        if (checkbox.checked) {
-            isNoOneChecked = false;
-        }
-    });
+    if (checkboxList) {
+        var isNoOneChecked = true;
 
-    checkboxList.classList.toggle('error', isNoOneChecked);
+        checkboxList.querySelectorAll('input[type="checkbox"').forEach(checkbox => {
+            if (checkbox.checked) {
+                isNoOneChecked = false;
+            }
+        });
 
-    return isNoOneChecked;
+        checkboxList.classList.toggle('error', isNoOneChecked);
+
+        return isNoOneChecked;
+    }
+    else {
+        return false;
+    }
 }
 
 function verifyInput(input) {
@@ -38,12 +47,24 @@ function verifyInput(input) {
     input.setAttribute('value', input.value.trim());
 }
 
-function sendEmail() {
+function sendEmail(sendButton) {
+    var data = {};
+
     var isAllDone = true;
 
     form.querySelectorAll('input, textarea').forEach(input => {
         if (input.type == 'checkbox') {
             input.onchange = verifyCheckboxes;
+            if (input.checked) {
+                let label = input.parentElement.parentElement.parentElement.querySelector('label').innerText;
+                let value = input.parentElement.querySelector('label').innerText;
+
+                if (data[label] == undefined) {
+                    data[label] = value;
+                } else {
+                    data[label] += ', ' + value;
+                }
+            }
         }
         else {
             if (!input.validity.valid) {
@@ -54,22 +75,61 @@ function sendEmail() {
             input.onchange = function () {
                 verifyInput(input);
             }
+            if (input.parentElement.querySelector('label')) {
+                data[input.parentElement.querySelector('label').innerText] = input.value;
+            }
+            else {
+                data[input.placeholder] = input.value;
+            }
         }
     });
 
     verifyCheckboxes();
 
+    var mail = '';
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            mail += '<b>' + key + '</b>' + ': ' + data[key];
+            mail += '<br/>'
+        }
+    }
+    console.log(mail);
+
     if (isAllDone && !verifyCheckboxes()) {
-        alert('OK!');
+        if (sendButton) {
+            sendButton.classList.add('loading');
+            sendButton.classList.remove('done');
+            sendButton.classList.remove('error');
+        }
         // Email.send({
         //     SecureToken: "3285c075-702c-4398-8dc8-b54ef499a7db",
         //     To: 'info@capturad.com',
         //     From: 'info@capturad.com',
-        //     Subject: form.querySelector('select').value,
-        //     Body: form.querySelector('textarea').value,
-        // }).then(
-        //     message => alert(message)
-        // );
+        //     Subject: form.querySelector('input#name').value,
+        //     Body: mail,
+        // })
+        //     .then(message => alert(message));
+        Email.send({
+            Host: "smtp.mail.ru",
+            Username: "ekrem.bayram@mail.ru",
+            Password: "8malru88malru8",
+            To: 'ekrem.bayram@mail.ru',
+            From: "ekrem.bayram@mail.ru",
+            Subject: form.querySelector('input#name').value,
+            Body: mail
+        })
+            .then(message => {
+                if (sendButton) {
+                    sendButton.classList.remove('loading');
+                    if (message == 'OK') {
+                        sendButton.classList.add('done');
+                    }
+                    else {
+                        sendButton.classList.add('error');
+                    }
+                }
+            });
+
     }
 }
 

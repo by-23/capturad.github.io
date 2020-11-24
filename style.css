@@ -1,81 +1,77 @@
 @font-face {
-    font-family: 'california';
-    src: url('fonts/SFUIDisplay-Light.woff') format('woff');
+    font-family: california;
+    src: url(fonts/SFUIDisplay-Light.woff) format('woff')
 }
 
 @font-face {
-    font-family: 'font1';
-    src: url('fonts/1.ttf') format('truetype');
-
+    font-family: font1;
+    src: url(fonts/1.ttf) format('truetype')
 }
 
 @font-face {
-    font-family: 'Hind';
-    src: url('fonts/Hind.ttf') format('truetype');
+    font-family: Hind;
+    src: url(fonts/Hind.ttf) format('truetype')
 }
-
 
 @keyframes blink {
 
     0%,
     100% {
-        opacity: 1;
+        opacity: 1
     }
 
     50% {
-        opacity: 0;
+        opacity: 0
     }
 }
 
 @keyframes blumb {
     from {
-        transform: scaleX(1.2) skewX(5deg);
+        transform: scaleX(1.2) skewX(5deg)
     }
 
     to {
-        transform: scaleX(1);
+        transform: scaleX(1)
     }
 }
-
 
 body {
     margin: 0;
     height: 100vh;
-    background-color: black;
-    /* background-image: url("img/1.jfif"); */
+    background-color: #000
 }
 
 video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover
 }
 
 .splide {
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: center
 }
 
 .splide__slide {
     width: 100vw;
     display: flex;
-    align-items: center;
+    align-items: center
 }
 
 .slide-text {
-    color: white;
+    color: #fff;
     display: flex;
     margin: 0 7rem;
-    font-family: "font1";
+    font-family: font1;
     font-size: 8vw;
-    background-size: 0% 100%;
+    background-size: 0 100%;
     transition: none;
     background-position: 0 100%;
     background-repeat: no-repeat;
     padding: 0 7px 14px 3px;
     pointer-events: none;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .splide__slide.is-active .slide-text {
@@ -86,7 +82,7 @@ video {
 }
 
 .slide-text::after {
-    content: "_";
+    content: "_"
 }
 
 .splide__slide.is-active .slide-text::after {
@@ -95,29 +91,25 @@ video {
 
 .slide-img {
     width: 100vw;
-    height: 100vh;
+    height: 100vh
 }
 
 #image-slider {
     position: fixed;
     top: 0;
     bottom: 0;
-    filter: blur(3px);
+    filter: blur(3px)
 }
 
 #image-slider .splide__slide {
-    box-shadow: inset 0 0 100rem 12rem rgba(0, 0, 0, 0.6);
-    height: 100vh;
-}
-
-#image-slider .splide__slide.is-active {
-    animation: blumb .4s cubic-bezier(.215, .61, .355, 1);
+    box-shadow: inset 0 0 100rem 12rem rgba(0, 0, 0, .6);
+    height: 100vh
 }
 
 #text-slider .splide__slide {
     width: max-content;
     border: 0;
-    cursor: pointer;
+    cursor: pointer
 }
 
 footer {
@@ -125,92 +117,92 @@ footer {
     bottom: 0;
     position: fixed;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
-footer .social,
+footer .info,
 footer .logo,
-footer .info {
+footer .social {
     display: flex;
-    margin: auto;
+    margin: auto
 }
 
 footer .social {
     margin-right: 0;
     margin-left: 2.5vw;
-    z-index: 1;
+    z-index: 1
 }
 
 footer .social a svg {
     width: auto;
     height: 4vh;
     color: #fff;
-    padding-right: 1rem;
+    padding-right: 1rem
 }
 
 footer .logo {
     position: fixed;
     width: 100%;
-    align-self: center;
+    align-self: center
 }
 
 footer .logo a {
     margin: auto;
-    color: white;
+    color: #fff;
     font-size: larger;
-    font-family: "Hind";
+    font-family: Hind;
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: bolder
 }
 
 footer .logo a a2 {
-    color: red;
+    color: red
 }
 
 footer .info {
     flex-direction: column;
     margin-right: 2vw;
     margin-left: 0;
-    z-index: 1;
+    z-index: 1
 }
 
 footer .info a {
     font-size: large;
-    color: white;
-    font-family: "Hind";
-    text-decoration: none;
+    color: #fff;
+    font-family: Hind;
+    text-decoration: none
 }
 
 #button-open-dialog {
     position: fixed;
     top: 0;
-    outline: none;
+    outline: 0;
     padding: 12px 30px;
     margin: 10px 20px;
-    color: white;
+    color: #fff;
     font-size: 1.2rem;
-    font-family: "california";
+    font-family: california;
     border-radius: 0;
     background-color: transparent;
-    background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
-    background-size: 0% 100%;
+    background-image: linear-gradient(#181a1b, #181a1b);
+    background-size: 0 100%;
     background-position: 0 100%;
     background-repeat: no-repeat;
     border: 1px solid rgba(255, 255, 255, .6);
-    transition: background-size 0.7s cubic-bezier(.165, .84, .44, 1);
-    cursor: pointer;
+    transition: background-size .7s cubic-bezier(.165, .84, .44, 1);
+    cursor: pointer
 }
 
 #button-open-dialog:hover {
-    background-size: 100% 100%;
+    background-size: 100% 100%
 }
 
 #button-open-dialog::after {
     content: "_";
-    opacity: 0;
+    opacity: 0
 }
 
 #button-open-dialog:hover::after {
     content: "_";
-    animation: blink .65s infinite;
+    animation: blink .65s infinite
 }

@@ -23,51 +23,51 @@
 
 <body>
     <div id="dialog">
-        <form id='form'>
-            <p class='field'>
-                <label class='label'>Ad Soyad</label>
-                <input type='text' class='text-input' id='name' name='name' required>
+        <form id="form">
+            <p class="field">
+                <label class="label">Ad Soyad</label>
+                <input type="text" class="text-input" id="name" name="name" required>
             </p>
-            <p class='field half'>
-                <label class='label'>E-posta</label>
-                <input type='email' class='text-input' id='email' name='email' required>
+            <p class="field half">
+                <label class="label">E-posta</label>
+                <input type="email" class="text-input" id="email" name="email" required>
             </p>
-            <p class='field half'>
-                <label class='label'>Telefon</label>
-                <input type='tel' class='text-input' id='phone' name='phone' pattern='^\+?\d{0,13}' required>
+            <p class="field half">
+                <label class="label">Telefon</label>
+                <input type="tel" class="text-input" id="phone" name="phone" pattern="^\+?\d{0,13}" required>
             </p>
-            <div class='field'>
-                <label class='label'>Almak İstediğiniz Türü</label>
-                <ul class='checkboxes'>
-                    <li class='checkbox'>
-                        <input type='checkbox' class='checkbox-input' id='choice-0' name='choice' value='0'>
-                        <label class='checkbox-label' for='choice-0'>Fotoğraf Çekim</label>
+            <div class="field">
+                <label class="label">Almak İstediğiniz Türü</label>
+                <ul class="checkboxes">
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-0" name="choice" value="0">
+                        <label class="checkbox-label" for="choice-0">Fotoğraf Çekim</label>
                     </li>
-                    <li class='checkbox'>
-                        <input type='checkbox' class='checkbox-input' id='choice-1' name='choice' value='1'>
-                        <label class='checkbox-label' for='choice-1'>Video Çekim</label>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-1" name="choice" value="1">
+                        <label class="checkbox-label" for="choice-1">Video Çekim</label>
                     </li>
-                    <li class='checkbox'>
-                        <input type='checkbox' class='checkbox-input' id='choice-2' name='choice' value='2'>
-                        <label class='checkbox-label' for='choice-2'>Web Tasarım</label>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-2" name="choice" value="2">
+                        <label class="checkbox-label" for="choice-2">Web Tasarım</label>
                     </li>
-                    <li class='checkbox'>
-                        <input type='checkbox' class='checkbox-input' id='choice-3' name='choice' value='3'>
-                        <label class='checkbox-label' for='choice-3'>Sosyal Medya Yönetim</label>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-3" name="choice" value="3">
+                        <label class="checkbox-label" for="choice-3">Sosyal Medya Yönetim</label>
                     </li>
-                    <li class='checkbox'>
-                        <input type='checkbox' class='checkbox-input' id='choice-4' name='choice' value='4'>
-                        <label class='checkbox-label' for='choice-4'>Başka</label>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-4" name="choice" value="4">
+                        <label class="checkbox-label" for="choice-4">Başka</label>
                     </li>
                 </ul>
             </div>
 
-            <p class='field'>
-                <label class='label'>Mesajınız</label>
-                <textarea class='textarea' id='about' name='about' rows='5' required></textarea>
+            <p class="field">
+                <label class="label">Mesajınız</label>
+                <textarea class="textarea" id="about" name="about" rows="5" required></textarea>
             </p>
-            <p class='field'>
-                <button type="button" class='button' onclick="sendEmail()">Gönder</button>
+            <p class="field">
+                <button type="button" class="button" onclick="sendEmail(this)"> </button>
             </p>
         </form>
     </div>
@@ -109,7 +109,7 @@
                         <a class="slide-text">HAKKIMIZDA</a>
                     </li> -->
                     <li class="splide__slide">
-                        <a href="/ContactUs/" class="slide-text">BIZE ULAŞIN</a>
+                        <a href="/contact/" class="slide-text">BIZE ULAŞIN</a>
                     </li>
                 </ul>
             </div>

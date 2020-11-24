@@ -1,9 +1,9 @@
 :root {
-  --transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
 }
 
 #content {
-  transition: var(--transition);
+  transition: var(--transition)
 }
 
 #content.zoom-out {
@@ -20,145 +20,110 @@
   z-index: 10;
   transition: var(--transition);
   pointer-events: none;
-  background-color: transparent;
+  background-color: transparent
 }
 
 #dialog.open {
   pointer-events: auto;
-  background-color: rgba(30, 30, 30, .55);
+  background-color: rgba(30, 30, 30, .55)
 }
 
 #dialog #form {
   transition: var(--transition);
   opacity: 0;
-  transform: scale(.8) translateY(150%);
+  transform: scale(.8) translateY(150%)
 }
 
 #dialog.open #form {
   opacity: 1;
-  transform: none;
+  transform: none
 }
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width:40rem) {
   #form {
-    font-size: 2vh;
+    font-size: 2vh
   }
 }
 
-#form .label,
+#form .button,
 #form .checkbox-input+label,
-#form .option-input+label,
+#form .label,
 #form .text-input,
-#form .textarea,
-#form .select,
-#form .message,
-#form .button {
-  padding: 0.75em 1em;
-  outline: none;
+#form .textarea {
+  padding: .75em 1em;
+  outline: 0;
   line-height: normal;
   border-radius: 0;
   border: none;
-  background: none;
-  display: block;
+  background: 0 0;
+  display: block
 }
 
 #form .label {
-  font-weight: bold;
-  color: white;
+  font-weight: 700;
+  color: #fff;
   padding-top: 0;
   padding-left: 0;
-  letter-spacing: 0.025em;
+  letter-spacing: .025em;
   font-size: 1.125em;
-  line-height: 1.25;
+  line-height: 1.25
 }
 
-.required #form .label:after,
-#form .required .label:after {
+#form .required .label:after,
+.required #form .label:after {
   content: " *";
-  color: #E8474C;
-  font-weight: normal;
-  font-size: 0.75em;
-  vertical-align: top;
+  color: #e8474c;
+  font-weight: 400;
+  font-size: .75em;
+  vertical-align: top
 }
 
 #form .checkbox-input+label,
-#form .option-input+label,
 #form .text-input,
-#form .textarea,
-#form .select {
+#form .textarea {
   font: inherit;
   line-height: normal;
   width: 100%;
   box-sizing: border-box;
-  background: #222222;
-  color: white;
-  position: relative;
+  background: #222;
+  color: #fff;
+  position: relative
 }
 
 #form .checkbox-input+label:placeholder,
-#form .option-input+label:placeholder,
 #form .text-input:placeholder,
-#form .textarea:placeholder,
-#form .select:placeholder {
-  color: white;
+#form .textarea:placeholder {
+  color: #fff
 }
 
 #form .checkbox-input+label:-webkit-autofill,
-#form .option-input+label:-webkit-autofill,
 #form .text-input:-webkit-autofill,
-#form .textarea:-webkit-autofill,
-#form .select:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px #111111 inset;
-  -webkit-text-fill-color: white;
-  border-top-color: #111111;
-  border-left-color: #111111;
-  border-right-color: #111111;
+#form .textarea:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #111 inset;
+  -webkit-text-fill-color: #fff;
+  border-top-color: #111;
+  border-left-color: #111;
+  border-right-color: #111
 }
 
 #form .checkbox-input+label:not(:focus):not(:active).error,
-#form .option-input+label:not(:focus):not(:active).error,
 #form .text-input:not(:focus):not(:active).error,
-#form .textarea:not(:focus):not(:active).error,
-#form .select:not(:focus):not(:active).error,
-.error #form .checkbox-input+label:not(:focus):not(:active),
-#form .error .checkbox-input+label:not(:focus):not(:active),
-.error #form .option-input+label:not(:focus):not(:active),
-#form .error .option-input+label:not(:focus):not(:active),
-.error #form .text-input:not(:focus):not(:active),
-#form .error .text-input:not(:focus):not(:active),
-.error #form .textarea:not(:focus):not(:active),
-#form .error .textarea:not(:focus):not(:active),
-.error #form .select:not(:focus):not(:active),
-#form .error .select:not(:focus):not(:active) {
+#form .textarea:not(:focus):not(:active).error {
   background-size: 8px 8px;
-  background-image: linear-gradient(135deg, rgba(232, 71, 76, 0.5), rgba(232, 71, 76, 0.5) 25%, transparent 25%, transparent 50%, rgba(232, 71, 76, 0.5) 50%, rgba(232, 71, 76, 0.5) 75%, transparent 75%, transparent);
-  background-repeat: repeat;
+  background-image: linear-gradient(135deg, rgba(232, 71, 76, .5), rgba(232, 71, 76, .5) 25%, transparent 25%, transparent 50%, rgba(232, 71, 76, .5) 50%, rgba(232, 71, 76, .5) 75%, transparent 75%, transparent);
+  background-repeat: repeat
 }
 
 #form:not(.has-magic-focus) .checkbox-input+label:active,
-#form:not(.has-magic-focus) .option-input+label:active,
-#form:not(.has-magic-focus) .text-input:active,
-#form:not(.has-magic-focus) .textarea:active,
-#form:not(.has-magic-focus) .select:active,
 #form:not(.has-magic-focus) .checkbox-input+label:focus,
-#form:not(.has-magic-focus) .option-input+label:focus,
+#form:not(.has-magic-focus) .text-input:active,
 #form:not(.has-magic-focus) .text-input:focus,
-#form:not(.has-magic-focus) .textarea:focus,
-#form:not(.has-magic-focus) .select:focus {
-  background: #4E4E4E;
+#form:not(.has-magic-focus) .textarea:active,
+#form:not(.has-magic-focus) .textarea:focus {
+  background: #4e4e4e
 }
 
-#form .message {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 100;
-  font-size: 0.625em;
-  color: white;
-}
-
-#form .checkbox-input,
-#form .option-input {
+#form .checkbox-input {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -166,42 +131,120 @@
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px;
+  width: 1px
 }
 
-#form .checkbox-input+label,
-#form .option-input+label {
+#form .checkbox-input+label {
   display: inline-block;
   width: auto;
-  color: #4E4E4E;
+  color: #4e4e4e;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: pointer;
+  cursor: pointer
 }
 
-#form .checkbox-input:focus+label,
-#form .option-input:focus+label,
 #form .checkbox-input:active+label,
-#form .option-input:active+label {
-  color: #4E4E4E;
+#form .checkbox-input:focus+label {
+  color: #4e4e4e
 }
 
-#form .checkbox-input:checked+label,
-#form .option-input:checked+label {
-  color: white;
+#form .checkbox-input:checked+label {
+  color: #fff
 }
 
 #form .button {
   font: inherit;
   cursor: pointer;
-  background: #B71C1C;
+  background-color: #B71C1C;
   color: white;
   font-weight: bold;
   padding-left: 2rem;
   padding-right: 2rem;
+  transition: .15s ease-in-out;
+}
+
+#form .button::before {
+  content: "Gönder";
+}
+
+@keyframes fill-in {
+  from {
+    background-size: 0% 100%;
+  }
+
+  to {
+    background-size: 500% 100%;
+  }
+}
+
+#form .button.loading {
+  background-image: linear-gradient(45deg, #1B5E20, transparent);
+  background-repeat: no-repeat;
+  animation: fill-in 4s ease-in-out both;
+  cursor: not-allowed;
+}
+
+#form .button.loading::before {
+  content: "Gönderiliyor...";
+}
+
+@keyframes fill-out {
+  from {
+    background-color: #1B5E20;
+  }
+
+  to {
+    background-color: #B71C1C;
+  }
+}
+
+#form .button.done {
+  animation: fill-out 3s ease-in-out both;
+}
+
+@keyframes fill-out-text {
+  from {
+    content: "Gönderildi :)";
+  }
+
+  to {
+    content: "Gönder";
+  }
+}
+
+#form .button.done::before {
+  animation: fill-out-text 3s ease-in-out both;
+}
+
+@keyframes shake {
+  from {
+    transform: translateX(-1%);
+  }
+
+  to {
+    transform: translateX(1%);
+  }
+}
+
+#form .button.error {
+  animation: shake .15s ease-in-out 3;
+}
+
+@keyframes shake-text {
+  from {
+    content: 'Gönderilemedi :(';
+  }
+
+  to {
+    content: 'Gönder';
+  }
+}
+
+#form .button.error::before {
+  animation: shake-text .15s 1s ease-in-out both;
 }
 
 #form .button:hover,
