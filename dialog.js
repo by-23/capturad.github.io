@@ -101,22 +101,12 @@ function sendEmail(sendButton) {
             sendButton.classList.remove('done');
             sendButton.classList.remove('error');
         }
-        // Email.send({
-        //     SecureToken: "3285c075-702c-4398-8dc8-b54ef499a7db",
-        //     To: 'info@capturad.com',
-        //     From: 'info@capturad.com',
-        //     Subject: form.querySelector('input#name').value,
-        //     Body: mail,
-        // })
-        //     .then(message => alert(message));
         Email.send({
-            Host: "smtp.mail.ru",
-            Username: "ekrem.bayram@mail.ru",
-            Password: "8malru88malru8",
-            To: 'ekrem.bayram@mail.ru',
-            From: "ekrem.bayram@mail.ru",
+            SecureToken: "3285c075-702c-4398-8dc8-b54ef499a7db",
+            To: 'info@capturad.com',
+            From: 'info@capturad.com',
             Subject: form.querySelector('input#name').value,
-            Body: mail
+            Body: mail,
         })
             .then(message => {
                 if (sendButton) {
