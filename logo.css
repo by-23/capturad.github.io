@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Hind;
+    src: url('../fonts/Hind.ttf') format('truetype');
+}
+
+.logo {
+    display: flex;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    align-self: center;
+    z-index: 2;
+}
+
+.logo a {
+    margin: auto;
+    color: #fff;
+    font-size: larger;
+    font-family: Hind;
+    text-decoration: none;
+    font-weight: bolder
+}
+
+.logo a a2 {
+    color: red
+}

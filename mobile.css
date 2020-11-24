@@ -9,7 +9,7 @@
 }
 
 @font-face {
-    font-family: 'Hind';
+    font-family: Hind;
     src: url('../fonts/Hind.ttf') format('truetype');
 }
 
@@ -48,18 +48,14 @@ body {
     text-decoration: none;
     margin: 0 auto;
     font-family: 'Barlow Condensed SemiBold';
-    color: #000;
-    /* background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
+    color: #fff;
+    background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
     background-size: 0% 100%;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     pointer-events: none;
     touch-action: none;
     user-select: none;
-    border-radius: 2rem;
-    mix-blend-mode: screen;
-    transition: 1s ease-in-out;
-    backdrop-filter: invert(0);
-    /* transition: none; */
+    transition: none;
 }
 
 
@@ -79,8 +75,7 @@ body {
     background-size: 100% 100%;
     pointer-events: all;
     touch-action: auto;
-    backdrop-filter: invert(1);
-    /* transition: background-size .7s cubic-bezier(.165, .84, .44, 1); */
+    transition: background-size .7s cubic-bezier(.165, .84, .44, 1);
 }
 
 
@@ -103,6 +98,7 @@ body {
 .swiper-slide-active .slide-text::after {
     animation: blink .65s infinite;
 }
+
 #button-open-dialog {
     position: fixed;
     top: 0;
@@ -121,16 +117,3 @@ body {
     transition: background-size 0.7s cubic-bezier(.165, .84, .44, 1);
     cursor: pointer;
 }
-
-#button-open-dialog:hover {
-    background-size: 100% 100%;
-}
-
-/* .button a::after {
-    content: "";
-}
-
-.button a:hover::after {
-    content: "_";
-    animation: blink .65s infinite;
-} */

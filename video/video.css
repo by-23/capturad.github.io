@@ -16,26 +16,6 @@ video {
     display: flex;
 }
 
-.logo {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    display: flex;
-
-}
-
-.logo a {
-    color: white;
-    margin: 1rem auto;
-    font-family: "Hind";
-    text-decoration: none;
-    font-weight: bolder;
-}
-
-.logo a a2 {
-    color: rgb(255, 0, 0);
-}
-
 .items {
     position: absolute;
     top: 50%;

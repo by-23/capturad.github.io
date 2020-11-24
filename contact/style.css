@@ -32,7 +32,8 @@
 body,
 html {
   height: 100%;
-  font-family: Montserrat-Regular, sans-serif
+  font-family: Montserrat-Regular, sans-serif;
+  user-select: none
 }
 
 a {
@@ -188,8 +189,8 @@ button:hover {
 }
 
 .wrap-contact100 {
-  width: 95vw;
-  height: 95vh;
+  width: 90vw;
+  height: 90vh;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
