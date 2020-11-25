@@ -14,6 +14,7 @@
 }
 
 body {
+    display: flex;
     height: 100vh;
     margin: 0;
 }
@@ -98,11 +99,19 @@ body {
 
 #button-open-dialog {
     position: fixed;
-    top: 0;
-    padding: 12px 30px;
-    color: white;
-    font-size: 1.2rem;
+    align-self: center;
+    right: 0;
+    height: 15vh;
+    border-radius: 2rem 0 0 2rem;
+    border: 0;
+    backdrop-filter: blur(1rem) invert(1);
+    -webkit-backdrop-filter: blur(1rem) invert(1);
+    color: black;
+    mix-blend-mode: difference;
+    font-size: x-large;
     font-family: "california";
-    background-color: transparent;
+    background-color: white;
+    box-shadow: 0 0 2rem white;
     z-index: 2;
+    outline: none;
 }

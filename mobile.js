@@ -4,6 +4,12 @@ var imageSwiper = new Swiper('#image-swiper', {
         loadPrevNext: true,
     },
     effect: 'fade',
+    direction: getDirection(),
+    on: {
+        resize: function () {
+            imageSwiper.changeDirection(getDirection());
+        }
+    },
 })
 
 var textSwiper = new Swiper('#text-swiper', {
@@ -14,7 +20,6 @@ var textSwiper = new Swiper('#text-swiper', {
     slideToClickedSlide: true,
     mousewheel: true,
     direction: getDirection(),
-    effect: 'coverflow',
     on: {
         resize: function () {
             textSwiper.changeDirection(getDirection());

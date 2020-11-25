@@ -10,6 +10,7 @@
     width: 100%;
     align-self: center;
     z-index: 2;
+    user-select: none;
 }
 
 .logo a {

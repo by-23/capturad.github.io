@@ -2,19 +2,30 @@ const content = document.getElementById('content');
 const dialog = document.getElementById('dialog');
 const buttonOpenDialog = document.getElementById('button-open-dialog');
 
-function toggleDialog() {
-    dialog.classList.toggle('open', !dialog.classList.contains('open'));
-    content.classList.toggle('zoom-out', !content.classList.contains('zoom-out'));
+function toggleDialog(toggle) {
+    if (toggle == undefined) {
+        dialog.classList.toggle('open', !dialog.classList.contains('open'));
+        content.classList.toggle('zoom-out', !content.classList.contains('zoom-out'));
+    } else {
+        dialog.classList.toggle('open', toggle);
+        content.classList.toggle('zoom-out', toggle);
+    }
 }
 
 if (buttonOpenDialog) {
     buttonOpenDialog.onclick = toggleDialog;
 }
 if (dialog) {
-    dialog.onclick = (ev) => {
+    dialog.onclick = ev => {
         if (ev.target == dialog) {
             toggleDialog();
         }
+    }
+}
+
+document.onkeydown = ev => {
+    if (ev.key == 'Escape') {
+        toggleDialog(false);
     }
 }
 
