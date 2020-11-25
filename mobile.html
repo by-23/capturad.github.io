@@ -13,105 +13,97 @@
     <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="dialog.css">
+    <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body>
     <button id="button-open-dialog">+</button>
     <div id="dialog">
-        <form id='form'>
-            <p class='field required'>
-                <label class='label required'>Ad Soyad</label>
-                <input class='text-input' id='name' name='name' required type='text' value=''>
+        <form id="form">
+            <p class="field">
+                <label translate="NAME" class="label"></label>
+                <input type="text" class="text-input" id="name" name="name" required>
             </p>
-            <p class='field required half'>
-                <label class='label'>E-posta</label>
-                <input class='text-input' id='email' name='email' required type='email'>
+            <p class="field half">
+                <label translate="EMAIL" class="label"></label>
+                <input type="email" class="text-input" id="email" name="email" required>
             </p>
-            <p class='field half'>
-                <label class='label'>Telefon</label>
-                <input class='text-input' id='phone' name='phone' type='phone'>
+            <p class="field half">
+                <label translate="PHONE" class="label"></label>
+                <input type="tel" class="text-input" id="phone" name="phone" pattern="^\+?\d{0,13}" required>
             </p>
-            <div class='field'>
-                <label class='label'>Almak İstediğiniz Türü</label>
-                <ul class='checkboxes'>
-                    <li class='checkbox'>
-                        <input class='checkbox-input' id='choice-0' name='choice' type='checkbox' value='0'>
-                        <label class='checkbox-label' for='choice-0'>Fotoğraf Çekim</label>
+            <div class="field">
+                <label translate="SERVICE" class="label"></label>
+                <ul class="checkboxes">
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-0" name="choice" value="0">
+                        <label translate="PHOTO" class="checkbox-label" for="choice-0"></label>
                     </li>
-                    <li class='checkbox'>
-                        <input class='checkbox-input' id='choice-1' name='choice' type='checkbox' value='1'>
-                        <label class='checkbox-label' for='choice-1'>Video Çekim</label>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-1" name="choice" value="1">
+                        <label translate="VIDEO" class="checkbox-label" for="choice-1"></label>
                     </li>
-                    <li class='checkbox'>
-                        <input class='checkbox-input' id='choice-2' name='choice' type='checkbox' value='2'>
-                        <label class='checkbox-label' for='choice-2'>Web Tasaım</label>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-2" name="choice" value="2">
+                        <label translate="WEB" class="checkbox-label" for="choice-2"></label>
                     </li>
-                    <li class='checkbox'>
-                        <input class='checkbox-input' id='choice-3' name='choice' type='checkbox' value='3'>
-                        <label class='checkbox-label' for='choice-3'>Sosyal Medya Yönetim</label>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-3" name="choice" value="3">
+                        <label translate="SOCIAL" class="checkbox-label" for="choice-3"></label>
                     </li>
-                    <li class='checkbox'>
-                        <input class='checkbox-input' id='choice-4' name='choice' type='checkbox' value='4'>
-                        <label class='checkbox-label' for='choice-4'>Başka</label>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-4" name="choice" value="4">
+                        <label translate="OTHER" class="checkbox-label" for="choice-4"></label>
                     </li>
                 </ul>
             </div>
-
-            <p class='field'>
-                <label class='label'>Mesajınız</label>
-                <textarea class='textarea' cols='50' id='about' name='about' rows='4'></textarea>
+            <p class="field">
+                <label translate="MESSAGE" class="label"></label>
+                <textarea class="textarea" id="about" name="about" rows="5" required></textarea>
             </p>
-            <p class='field half'>
-                <label class='label'>Almak İstediğiniz Hizmet</label>
-                <select class='select' id='select'>
-                    <option selected value=''></option>
-                    <option value='ceo'>Tanıtım Video</option>
-                    <option value='front-end'>Reklam Video</option>
-                    <option value='back-end'>Etkinlik Çeikimi</option>
-                </select>
-            </p>
-            <p class='field half'>
-                <input class='button' type='submit' value='Gönder'>
+            <p class="field">
+                <button type="button" class="button" onclick="sendEmail(this)"> </button>
             </p>
         </form>
     </div>
-    <div id="image-swiper" class="swiper-container">
-        <div class="swiper-wrapper">
-            <div data-background="../img/1.webp" class="swiper-slide swiper-lazy">
-                <div class="swiper-lazy-preloader"></div>
-            </div>
-            <div data-background="../img/2.webp" class="swiper-slide swiper-lazy">
-                <div class="swiper-lazy-preloader"></div>
-            </div>
-            <div data-background="../img/3.webp" class="swiper-slide swiper-lazy">
-                <div class="swiper-lazy-preloader"></div>
-            </div>
-            <!-- <div data-background="../img/4.webp" class="swiper-slide swiper-lazy">
+    <div id="content">
+        <div id="image-swiper" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div data-background="../img/1.webp" class="swiper-slide swiper-lazy">
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div data-background="../img/2.webp" class="swiper-slide swiper-lazy">
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div data-background="../img/3.webp" class="swiper-slide swiper-lazy">
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <!-- <div data-background="../img/4.webp" class="swiper-slide swiper-lazy">
                 <div class="swiper-lazy-preloader"></div>
             </div> -->
-            <div data-background="../img/5.webp" class="swiper-slide swiper-lazy">
-                <div class="swiper-lazy-preloader"></div>
+                <div data-background="../img/5.webp" class="swiper-slide swiper-lazy">
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="text-swiper" class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a translate="VIDEO" class="slide-text" href="../video/"></a>
-            </div>
-            <div class="swiper-slide">
-                <a translate="PHOTO" class="slide-text" href="../photo/"></a>
-            </div>
-            <div class="swiper-slide">
-                <a translate="WEB" class="slide-text" href="../tasarim/"></a>
-            </div>
-            <!-- <div class="swiper-slide">
+        <div id="text-swiper" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a translate="VIDEO" class="slide-text" href="../video/"></a>
+                </div>
+                <div class="swiper-slide">
+                    <a translate="PHOTO" class="slide-text" href="../photo/"></a>
+                </div>
+                <div class="swiper-slide">
+                    <a translate="WEB" class="slide-text" href="../tasarim/"></a>
+                </div>
+                <!-- <div class="swiper-slide">
                 <a translate="HAKKIMIZDA" class="slide-text"></a>
             </div> -->
-            <div class="swiper-slide">
-                <a translate="FEEDBACK" class="slide-text" href="../contact/"></a>
+                <div class="swiper-slide">
+                    <a translate="FEEDBACK" class="slide-text" href="../contact/"></a>
+                </div>
             </div>
         </div>
     </div>

@@ -108,6 +108,10 @@ video {
     cursor: pointer
 }
 
+#image-slider .splide__slide.is-active {
+    animation: blumb .4s cubic-bezier(.215, .61, .355, 1);
+}
+
 footer {
     width: 100vw;
     bottom: 0;
