@@ -1,11 +1,6 @@
 @font-face {
-    font-family: california;
-    src: url(fonts/SFUIDisplay-Light.woff) format('woff')
-}
-
-@font-face {
     font-family: font1;
-    src: url(fonts/1.ttf) format('truetype')
+    src: url(fonts/2.ttf) format('truetype')
 }
 
 @font-face {
@@ -163,7 +158,7 @@ footer .info a {
     margin: 10px 20px;
     color: #fff;
     font-size: 1.2rem;
-    font-family: california;
+    font-family: font1;
     border-radius: 0;
     background-color: transparent;
     background-image: linear-gradient(#181a1b, #181a1b);
