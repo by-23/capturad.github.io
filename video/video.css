@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: url(../img/bg.png);
+    background-image: url(../img/bg.webp);
     backdrop-filter: blur(4px);
 }
 
@@ -99,20 +99,4 @@ video {
 
 .button-container .button:nth-child(2) {
     float: right;
-}
-
-.arrow-icon {
-    margin: auto;
-    width: 2rem;
-    height: 1rem;
-}
-
-.arrow-icon.left {
-    background-image: url("../img/strelka.png");
-    transform: rotate(-90deg);
-}
-
-.arrow-icon.right {
-    background-image: url("../img/strelka.png");
-    transform: rotate(90deg);
 }

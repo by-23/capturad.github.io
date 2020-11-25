@@ -168,13 +168,6 @@ button:hover {
   cursor: pointer
 }
 
-.bg-contact100 {
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover
-}
-
 .container-contact100 {
   min-height: 100vh;
   display: -webkit-box;
@@ -185,7 +178,7 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #2195f3d7
+  background: linear-gradient(175deg, #B3E5FC, #01579B)
 }
 
 .wrap-contact100 {
@@ -380,7 +373,8 @@ textarea.input100 {
 
 @media (max-width:768px) {
   .wrap-contact100 {
-    padding: 110px 80px 157px 80px
+    padding: 5vh 5vw;
+    height: auto;
   }
 
   .contact100-pic {
@@ -389,12 +383,6 @@ textarea.input100 {
 
   .contact100-form {
     width: 100%
-  }
-}
-
-@media (max-width:576px) {
-  .wrap-contact100 {
-    padding: 110px 15px 157px 15px
   }
 }
 

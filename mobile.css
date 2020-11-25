@@ -16,9 +16,6 @@
 body {
     height: 100vh;
     margin: 0;
-    /* background: url(../img/1.jpg);
-    background-position: center;
-    background-size: cover; */
 }
 
 .swiper-container {
@@ -102,18 +99,10 @@ body {
 #button-open-dialog {
     position: fixed;
     top: 0;
-    outline: none;
     padding: 12px 30px;
-    margin: 10px 20px;
     color: white;
     font-size: 1.2rem;
     font-family: "california";
     background-color: transparent;
-    background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
-    background-size: 0% 100%;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    border: 1px solid rgba(255, 255, 255, .6);
-    transition: background-size 0.7s cubic-bezier(.165, .84, .44, 1);
-    cursor: pointer;
+    z-index: 2;
 }
