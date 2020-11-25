@@ -1,4 +1,4 @@
 User-agent: Yandex
-Disallow: /
+Allow: /
 sitemap: https://capturad.com/sitemap.xml
 sitemap: https://capturad.com/sitemap.xml
