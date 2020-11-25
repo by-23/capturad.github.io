@@ -187,3 +187,19 @@ footer .info a {
     content: "_";
     animation: blink .65s infinite
 }
+
+#tr {
+    position: fixed;
+    top: 0;
+    right: 3rem;
+    width: 2rem;
+    margin: 2rem;
+}
+
+#ru {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    margin: 2rem;
+}
