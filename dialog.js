@@ -1,6 +1,5 @@
 const content = document.getElementById('content');
 const dialog = document.getElementById('dialog');
-const buttonOpenDialog = document.getElementById('button-open-dialog');
 
 function toggleDialog(toggle) {
     if (toggle == undefined) {
@@ -10,10 +9,6 @@ function toggleDialog(toggle) {
         dialog.classList.toggle('open', toggle);
         content.classList.toggle('zoom-out', toggle);
     }
-}
-
-if (buttonOpenDialog) {
-    buttonOpenDialog.onclick = toggleDialog;
 }
 if (dialog) {
     dialog.onclick = ev => {

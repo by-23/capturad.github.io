@@ -16,6 +16,7 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: black;
     height: 100vh;
     margin: 0;
 }
@@ -104,8 +105,8 @@ body {
     font-family: "california";
     background-color: white;
     box-shadow: 0 0 2rem white;
-    backdrop-filter: blur(1rem) invert(1);
-    -webkit-backdrop-filter: blur(1rem) invert(1);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
     z-index: 2;
     outline: none;
 }
@@ -129,4 +130,21 @@ body {
 
 #dialog {
     position: absolute;
+}
+
+#button-close-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: .5rem 0.75rem;
+    border-radius: 0 0 0 50%;
+}
+
+svg {
+    width: 1rem;
+    height: auto;
 }
