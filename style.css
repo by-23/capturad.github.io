@@ -190,6 +190,10 @@ footer .info a {
     animation: blink .65s infinite
 }
 
+#form {
+    max-width: 70vw;
+}
+
 .lang-panel {
     position: fixed;
     top: 0;

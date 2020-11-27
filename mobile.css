@@ -19,6 +19,7 @@ body {
     background-color: black;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .swiper-container {
@@ -58,13 +59,13 @@ body {
 
 @media (orientation:landscape) {
     .slide-text {
-        font-size: 7vw;
+        font-size: 5vw;
     }
 }
 
 @media (orientation:portrait) {
     .slide-text {
-        font-size: 7vh;
+        font-size: 5vh;
     }
 }
 
@@ -99,24 +100,24 @@ body {
 #button-open-dialog {
     position: fixed;
     border: 0;
-    color: black;
-    mix-blend-mode: difference;
+    padding: 0;
+    color: white;
     font-size: x-large;
     font-family: "california";
-    background-color: white;
-    box-shadow: 0 0 2rem white;
-    backdrop-filter: blur(1rem);
-    -webkit-backdrop-filter: blur(1rem);
+    background-color: #181a1b;
     z-index: 2;
     outline: none;
 }
 
 @media (orientation:portrait) {
     #button-open-dialog {
-        align-self: center;
         right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
         height: 15vh;
-        border-radius: 2vh 0 0 2vh;
+        width: 10vw;
+        border-radius: 3vh 0 0 3vh;
     }
 }
 
@@ -124,27 +125,64 @@ body {
     #button-open-dialog {
         bottom: 0;
         width: 15vw;
-        border-radius: 2vw 2vw 0 0;
+        height: 10vh;
+        border-radius: 3vw 3vw 0 0;
     }
 }
 
 #dialog {
-    position: absolute;
+    overflow: auto;
+    background-color: #111111;
+}
+
+#form {
+    padding: 0;
+    margin: 0 auto;
+}
+
+@media (orientation:portrait) {
+    #form .field {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+}
+
+@media (orientation:landscape) {
+    #form .field {
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+}
+
+@media (orientation:landscape) {
+    #form .label {
+        font-size: 1.75vw;
+    }
 }
 
 #button-close-dialog {
-    position: fixed;
+    position: sticky;
     top: 0;
-    right: 0;
+    margin-left: auto;
     z-index: 1;
     background-color: white;
     border: none;
     color: black;
     padding: .5rem 0.75rem;
     border-radius: 0 0 0 50%;
+    outline: none;
 }
 
-svg {
-    width: 1rem;
-    height: auto;
+@media (orientation:portrait) {
+    svg {
+        width: 5vw;
+        height: 5vw;
+    }
+}
+
+@media (orientation:landscape) {
+    svg {
+        width: 3vw;
+        height: 3vw;
+    }
 }

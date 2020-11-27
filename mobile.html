@@ -11,24 +11,24 @@
         content="Reklam ve tanıtım video çekimleri! En yüksek kalite ve en uygun fiyata! Dron video çekim, WEB-tasarım, Fotoğraf çekim, Broşür tasarım, Kartvizit tasarım, Açık hava reklamı tasarım, Etkinlik çekim, Kurumsal video çekim ve diğer türlü çekimler. Detaylı bilgi almak içik iletişime geçiniz." />
     <title>capturad</title>
     <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="dialog.css">
-    <link rel="stylesheet" href="mobile.css">
+    <link type="text/css" rel="stylesheet" href="dialog.css">
+    <link type="text/css" rel="stylesheet" href="mobile.css">
 </head>
 
 <body>
-    <button id="button-open-dialog" onclick="toggleDialog()">
-        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus"
-            class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <button type="button" id="button-open-dialog" onclick="toggleDialog()">
+        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="plus" role="img"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-plus fa-w-12">
             <path fill="currentColor"
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-            </path>
+                d="M368 224H224V80c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v144H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h144v144c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V288h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"
+                class="" data-darkreader-inline-fill="" style="--darkreader-inline-fill:currentColor;"></path>
         </svg>
     </button>
     <div id="dialog">
         <form id="form">
-            <button id="button-close-dialog" onclick="toggleDialog()">
+            <button type="button" id="button-close-dialog" onclick="toggleDialog()">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times"
                     class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 352 512">
@@ -41,11 +41,11 @@
                 <label translate="NAME" class="label"></label>
                 <input type="text" class="text-input" id="name" name="name" required>
             </p>
-            <p class="field half">
+            <p class="field">
                 <label translate="EMAIL" class="label"></label>
                 <input type="email" class="text-input" id="email" name="email" required>
             </p>
-            <p class="field half">
+            <p class="field">
                 <label translate="PHONE" class="label"></label>
                 <input type="tel" class="text-input" id="phone" name="phone" pattern="^\+?\d{0,13}" required>
             </p>

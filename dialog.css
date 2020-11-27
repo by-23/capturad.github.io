@@ -3,8 +3,10 @@
 }
 
 #content {
+  position: fixed;
   transition: var(--transition);
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 #content.zoom-out {
@@ -19,23 +21,23 @@
   z-index: 10;
   transition: var(--transition);
   pointer-events: none;
-  background-color: transparent
+  background-color: rgba(30, 30, 30, .55);
+  opacity: 0;
 }
 
 #dialog.open {
   pointer-events: auto;
-  background-color: rgba(30, 30, 30, .55)
+  opacity: 1;
 }
 
 #dialog #form {
   transition: var(--transition);
-  opacity: 0;
-  transform: scale(.8) translateY(150%)
+  will-change: transform;
+  transform: scale(.8) translateY(115%)
 }
 
 #dialog.open #form {
-  opacity: 1;
-  transform: none
+  transform: scale(1) translateY(0%)
 }
 
 @media screen and (min-width:40rem) {
@@ -67,18 +69,6 @@
   /* font-size: 1.125em; */
   line-height: 1.25;
   user-select: none;
-}
-
-@media (orientation:portrait) {
-  #form .label {
-    font-size: 2.3vh;
-  }
-}
-
-@media (orientation:landscape) {
-  #form .label {
-    font-size: 1.6vw;
-  }
 }
 
 #form .required .label:after,
@@ -276,12 +266,11 @@
 
 #form {
   margin: auto;
-  max-width: 50rem;
-  padding: 5vh 5vw;
+  padding: 2rem 2rem 0 2rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: end;
   background-color: #111111;
   font-family: "Titillium Web", sans-serif;
 }
