@@ -198,7 +198,7 @@ footer .info a {
     position: fixed;
     top: 0;
     right: 0;
-    margin: 2rem;
+    margin: 1.5rem;
     z-index: 1;
 }
 
@@ -206,8 +206,25 @@ footer .info a {
     margin-left: .5rem;
     cursor: pointer;
     user-select: none;
+    transition: var(--transition);
 }
 
 .lang-icon svg {
     width: 2rem;
+}
+
+i#ru:lang(ru) {
+    pointer-events: none;
+}
+
+i#ru:lang(tr) {
+    opacity: .5;
+}
+
+i#tr:lang(tr) {
+    pointer-events: none;
+}
+
+i#tr:lang(ru) {
+    opacity: .5;
 }

@@ -11,6 +11,7 @@
     align-self: center;
     z-index: 2;
     user-select: none;
+    pointer-events: none;
 }
 
 .logo a {
@@ -19,7 +20,8 @@
     font-size: larger;
     font-family: Hind;
     text-decoration: none;
-    font-weight: bolder
+    font-weight: bolder;
+    pointer-events: auto;
 }
 
 .logo a a2 {

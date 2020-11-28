@@ -101,11 +101,11 @@
 #form .checkbox-input+label:-webkit-autofill,
 #form .text-input:-webkit-autofill,
 #form .textarea:-webkit-autofill {
-  box-shadow: 0 0 0 1000px #111 inset;
+  box-shadow: 0 0 0 1000px #222 inset;
   -webkit-text-fill-color: #fff;
-  border-top-color: #111;
-  border-left-color: #111;
-  border-right-color: #111
+  border-top-color: #222;
+  border-left-color: #222;
+  border-right-color: #222
 }
 
 #form .checkbox-input+label:not(:focus):not(:active).error,
@@ -170,8 +170,12 @@
   transition: .15s ease-in-out;
 }
 
-#form .button::before {
+#form .button:lang(tr)::before {
   content: "Gönder";
+}
+
+#form .button:lang(ru)::before {
+  content: "Отправить";
 }
 
 @keyframes fill-in {
@@ -191,8 +195,12 @@
   cursor: not-allowed;
 }
 
-#form .button.loading::before {
+#form .button.loading:lang(tr)::before {
   content: "Gönderiliyor...";
+}
+
+#form .button.loading:lang(ru)::before {
+  content: "Отправляется...";
 }
 
 @keyframes fill-out {
@@ -209,7 +217,7 @@
   animation: fill-out 3s ease-in-out both;
 }
 
-@keyframes fill-out-text {
+@keyframes fill-out-text-tr {
   from {
     content: "Gönderildi :)";
   }
@@ -219,8 +227,22 @@
   }
 }
 
-#form .button.done::before {
-  animation: fill-out-text 3s ease-in-out both;
+@keyframes fill-out-text-ru {
+  from {
+    content: "Отправлено :)";
+  }
+
+  to {
+    content: "Отправить";
+  }
+}
+
+#form .button.done:lang(tr)::before {
+  animation: fill-out-text-tr 3s ease-in-out both;
+}
+
+#form .button.done:lang(ru)::before {
+  animation: fill-out-text-ru 3s ease-in-out both;
 }
 
 @keyframes shake {
@@ -237,7 +259,7 @@
   animation: shake .15s ease-in-out 3;
 }
 
-@keyframes shake-text {
+@keyframes shake-text-tr {
   from {
     content: 'Gönderilemedi :(';
   }
@@ -247,8 +269,22 @@
   }
 }
 
-#form .button.error::before {
-  animation: shake-text .15s 1s ease-in-out both;
+@keyframes shake-text-ru {
+  from {
+    content: 'Не отправлено :(';
+  }
+
+  to {
+    content: 'Отправить';
+  }
+}
+
+#form .button.error:lang(tr)::before {
+  animation: shake-text-tr .15s 1s ease-in-out both;
+}
+
+#form .button.error:lang(ru)::before {
+  animation: shake-text-ru .15s 1s ease-in-out both;
 }
 
 #form .button:hover,

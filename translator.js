@@ -9,6 +9,10 @@ function translateTo(lang) {
             }
         });
         localStorage.setItem('lang', lang);
+        document.documentElement.lang = lang;
+        if (typeof textSlider != 'undefined') {
+            textSlider.go(textSlider.index);
+        }
     });
 }
 
@@ -16,5 +20,10 @@ if (localStorage.getItem('lang')) {
     translateTo(localStorage.getItem('lang'));
 }
 else {
-    translateTo(navigator.language.split('-')[0]);
+    if (navigator.language.split('-')[0] == 'ru') {
+        translateTo('ru');
+    }
+    else {
+        translateTo('tr');
+    }
 }

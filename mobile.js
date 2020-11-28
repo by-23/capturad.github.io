@@ -27,8 +27,7 @@ var textSwiper = new Swiper('#text-swiper', {
         slideChange: function (swiper) {
             imageSwiper.slideTo(swiper.realIndex);
         }
-    },
-    passiveListeners: false,
+    }
 })
 
 function getDirection() {

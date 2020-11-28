@@ -3,7 +3,7 @@ if ("ontouchstart" in document.documentElement) {
 }
 
 // Create and mount the thumbnails slider.
-const textSlider = new Splide('#text-slider', {
+var textSlider = new Splide('#text-slider', {
     cover: false,
     focus: 'center',
     autoWidth: true,
