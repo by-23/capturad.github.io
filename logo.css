@@ -20,7 +20,7 @@
     font-size: larger;
     font-family: Hind;
     text-decoration: none;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     pointer-events: auto;
 }
 
