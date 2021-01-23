@@ -2,7 +2,6 @@ if ("ontouchstart" in document.documentElement) {
     location.href = '/mobile.html';
 }
 
-// Create and mount the thumbnails slider.
 var textSlider = new Splide('#text-slider', {
     cover: false,
     focus: 'center',
@@ -16,7 +15,6 @@ var textSlider = new Splide('#text-slider', {
     lazyLoad: 'nearby',
 }).mount();
 
-// Create the main slider.
 const imageSlider = new Splide('#image-slider', {
     type: 'fade',
     heightRatio: 0.5,
@@ -34,5 +32,4 @@ const imageSlider = new Splide('#image-slider', {
     },
 });
 
-// Set the thumbnails slider as a sync target and then call mount.
 imageSlider.sync(textSlider).mount(window.splide.Extensions);

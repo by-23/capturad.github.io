@@ -11,6 +11,12 @@
 
 #content.zoom-out {
   transform: scale(.85);
+  opacity: .5;
+}
+
+#content.zoom-in {
+  transform: scale(3);
+  filter: contrast(0) brightness(0.15);
 }
 
 #dialog {
@@ -21,7 +27,6 @@
   z-index: 10;
   transition: var(--transition);
   pointer-events: none;
-  background-color: rgba(30, 30, 30, .55);
   opacity: 0;
 }
 

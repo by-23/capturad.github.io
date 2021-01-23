@@ -125,13 +125,7 @@
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide">
-                        <a translate="VIDEO" href="/video/" class="slide-text"></a>
-                    </li>
-                    <li class="splide__slide">
-                        <a translate="PHOTO" href="/photo/" class="slide-text"></a>
-                    </li>
-                    <li class="splide__slide">
-                        <a translate="WEB" href="/tasarim/" class="slide-text"></a>
+                        <a translate="OTHER" class="slide-text" onclick="toggleSubmenu()"></a>
                     </li>
                     <!-- <li class="splide__slide">
                         <a class="slide-text">HAKKIMIZDA</a>
@@ -172,6 +166,17 @@
             </div>
         </footer>
     </div>
+    <ul id="submenu" class="splide__slide">
+        <li>
+            <a translate="VIDEO" href="/video/" class="slide-text"></a>
+        </li>
+        <li>
+            <a translate="PHOTO" href="/photo/" class="slide-text"></a>
+        </li>
+        <li>
+            <a translate="WEB" href="/tasarim/" class="slide-text"></a>
+        </li>
+    </ul>
 </body>
 <script src="index.js"></script>
 <script src="dialog.js"></script>

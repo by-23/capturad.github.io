@@ -10,10 +10,11 @@ function toggleDialog(toggle) {
         content.classList.toggle('zoom-out', toggle);
     }
 }
+
 if (dialog) {
     dialog.onclick = ev => {
         if (ev.target == dialog) {
-            toggleDialog();
+            toggleDialog(false);
         }
     }
 }
@@ -21,6 +22,7 @@ if (dialog) {
 document.onkeydown = ev => {
     if (ev.key == 'Escape') {
         toggleDialog(false);
+        toggleSubmenu(false);
     }
 }
 
@@ -190,3 +192,23 @@ function sendEmail(sendButton) {
 
 }
 ).call(this);
+
+const submenu = document.getElementById('submenu')
+
+function toggleSubmenu(toggle) {
+    if (toggle == undefined) {
+        submenu.classList.toggle('is-active', !submenu.classList.contains('is-active'));
+        content.classList.toggle('zoom-in', !content.classList.contains('zoom-in'));
+    } else {
+        submenu.classList.toggle('is-active', toggle);
+        content.classList.toggle('zoom-in', toggle);
+    }
+}
+
+if (submenu) {
+    submenu.onclick = ev => {
+        if (ev.target == submenu) {
+            toggleSubmenu(false);
+        }
+    }
+}

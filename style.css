@@ -51,7 +51,8 @@ video {
 .splide__slide {
     width: 100vw;
     display: flex;
-    align-items: center
+    align-items: center;
+    justify-content: center;
 }
 
 .slide-text {
@@ -70,7 +71,8 @@ video {
     user-select: none;
 }
 
-.splide__slide.is-active .slide-text {
+.splide__slide.is-active .slide-text,
+.slide-text:hover {
     background-image: linear-gradient(rgb(24, 26, 27), rgb(24, 26, 27));
     background-size: 100% 100%;
     transition: background-size 0.7s cubic-bezier(.165, .84, .44, 1);
@@ -227,4 +229,47 @@ i#tr:lang(tr) {
 
 i#tr:lang(ru) {
     opacity: .5;
+}
+
+#submenu {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+    height: 0;
+    transition: var(--transition);
+}
+
+#submenu.is-active {
+    transform: none;
+    height: 100vh;
+    opacity: 1;
+}
+
+#submenu .slide-text {
+    font-size: 4vw;
+    margin: 0 .5rem;
+    background-image: linear-gradient(#fff, #fff);
+    padding: 0;
+    background-size: 0% 100%;
+    transition: var(--transition);
+}
+
+#submenu .slide-text:hover {
+    color: rgb(24, 26, 27);
+    background-size: 100% 100%;
+}
+
+#submenu .slide-text::after {
+    opacity: 0;
+    animation: none;
+}
+
+#submenu .slide-text:hover:after {
+    animation: blink .65s infinite;
 }
