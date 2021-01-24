@@ -1,37 +1,169 @@
+:root {
+    box-sizing: border-box;
+    --transition: .45s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+* {
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    background-color: #eee;
+    overflow: overlay;
+}
+
+img {
+    object-fit: contain;
+    overflow: auto;
+}
+
 .flex-row {
     display: flex;
     margin: 0 auto;
-    width: 75vw;
-    height: 38vw;
+    align-items: center;
+    width: 60rem;
 }
 
 .merch,
-.brand {
-    width: 100%;
-    height: 100%;
-    background-size: contain;
+#dragNdrop {
+    position: relative;
+    width: 50%;
+    height: 457px;
+    margin-bottom: 20px;
 }
 
-/* 
-.brand {
+.merch:nth-child(2),
+#dragNdrop:nth-child(2) {
+    margin-left: 20px;
+}
+
+.merch img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+}
+
+.merch .bg {
+    width: 100%;
+    height: 100%;
+    background-size: 500px !important;
+    background-position: top !important;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#dragNdrop {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #000;
 }
 
-.brand svg {
-    width: 5vw;
-    height: 5vw;
-    border: solid 0.5vw currentColor;
-    border-style: dashed;
-    padding: 10vw;
-    border-radius: 5vw;
-} */
+#dragNdrop img {
+    height: 100%;
+    transition: var(--transition);
+    will-change: filter;
+}
 
-.box__dragndrop,
-.box__uploading,
-.box__success,
-.box__error {
-    display: none;
+#dragNdrop svg {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    border: solid 0.4rem currentColor;
+    border-style: dashed;
+    padding: 15%;
+    border-radius: 25%;
+    transition: var(--transition);
+}
+
+#dragNdrop:not(.selected).hover svg,
+#dragNdrop:not(.selected) svg:hover {
+    padding: 30%;
+    cursor: pointer;
+    color: #0c0;
+}
+
+#dragNdrop.selected svg {
+    opacity: 0;
+}
+
+#dragNdrop.selected:hover {
+    cursor: pointer;
+}
+
+#dragNdrop.selected.hover img,
+#dragNdrop.selected:hover img {
+    filter: blur(1vw);
+}
+
+#dragNdrop.selected.hover svg,
+#dragNdrop.selected:hover svg {
+    color: #fff;
+    filter: drop-shadow(0px 0px 0.5vw #000);
+    padding: 30%;
+    opacity: 1;
+}
+
+.merch#sign img {
+    width: 500px;
+    height: 500px;
+    transform: translate(-244px, -229px) scale(0.43) perspective(1200px) rotateY(10deg) rotateZ(3deg) skew(2deg, 5deg);
+}
+
+.merch#books {
+    width: 100%;
+    height: 536px;
+}
+
+.merch#books .bg {
+    background-size: 984px !important;
+}
+
+.merch#books img:first-child {
+    transform: translate(-357px, -133.5px) rotateZ(-48deg) scale(0.26) skewY(10deg);
+}
+
+.merch#books img:nth-child(2) {
+    transform: translate(-126px, -299.5px) rotateZ(-48deg) scale(0.24) skewY(10deg);
+}
+
+.merch#shirt img {
+    transform: translate(-149px, -137px) scale(0.56);
+}
+
+.merch#phone img {
+    transform: translate(-154px, -135.5px) rotateZ(-28deg) scale(0.5) skewY(4deg) scale(0.9);
+}
+
+@media (orientation: portrait) {
+    .flex-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .merch,
+    #dragNdrop {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+
+    .merch#books {
+        height: 348px;
+    }
+
+    .merch#books .bg {
+        background-size: 600px !important;
+    }
+
+    .merch#books img:first-child {
+        transform: translate(-273px, -147.5px) rotateZ(-48deg) scale(0.19) skewY(10deg);
+    }
+
+    .merch#books img:nth-child(2) {
+        transform: translate(-135px, -251px) rotateZ(-48deg) scale(0.17) skewY(10deg);
+    }
+
 }
