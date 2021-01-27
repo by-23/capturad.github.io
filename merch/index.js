@@ -1,6 +1,6 @@
 const dragNdrop = document.querySelector('#dragNdrop')
 const input = dragNdrop.querySelector('input')
-const img = dragNdrop.querySelector('img')
+const imgList = document.querySelectorAll('img')
 const merchList = document.querySelectorAll('.merch')
 
 input.onchange = () => {
@@ -33,16 +33,17 @@ function setBackgroundFromFile(file) {
     if (file.type.match('image.*')) {
         let reader = new FileReader()
         reader.onload = (e) => {
-            img.src = e.target.result
-            img.hidden = false
-            dragNdrop.classList.add('selected')
 
-            merchList.forEach(merch => {
-                merch.querySelectorAll('img').forEach(merchImg => {
-                    merchImg.src = e.target.result
-                    merchImg.hidden = false
+            dragNdrop.classList.add('loading')
+            setTimeout(() => {
+                imgList.forEach(img => {
+                    img.src = e.target.result
+                    img.classList.remove('hidden')
                 })
-            });
+                dragNdrop.classList.add('selected')
+                
+                dragNdrop.classList.remove('loading')
+            }, 2000);
         }
         reader.readAsDataURL(file)
     }
