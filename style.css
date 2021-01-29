@@ -1,11 +1,11 @@
 @font-face {
-    font-family: font1;
-    src: url(fonts/2.ttf) format('truetype')
+    font-family: "Whitney Light";
+    src: url('fonts/Whitney Light.ttf') format('truetype')
 }
 
 @font-face {
     font-family: Hind;
-    src: url(fonts/Hind.ttf) format('truetype')
+    src: url('fonts/Hind.ttf') format('truetype')
 }
 
 @keyframes blink {
@@ -59,7 +59,7 @@ video {
     color: #fff;
     display: flex;
     margin: 0 7rem;
-    font-family: font1;
+    font-family: "Whitney Light";
     font-size: 8vw;
     background-size: 0 100%;
     transition: none;
@@ -164,7 +164,7 @@ footer .info a {
     margin: 10px 20px;
     color: #fff;
     font-size: 1.2rem;
-    font-family: font1;
+    font-family: "Whitney Light";
     border-radius: 0;
     background-color: transparent;
     background-image: linear-gradient(#181a1b, #181a1b);
