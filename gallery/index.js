@@ -1,35 +1,51 @@
-if ("ontouchstart" in document.documentElement) {
-    location.href = '/mobile.html';
-}
-
-var textSlider = new Splide('#text-slider', {
-    cover: false,
-    focus: 'center',
-    autoWidth: true,
-    updateOnMove: true,
-    pagination: false,
-    type: 'loop',
-    isNavigation: true,
-    arrows: false,
-    drag: false,
-    lazyLoad: 'nearby',
-}).mount();
-
-const imageSlider = new Splide('#image-slider', {
-    type: 'fade',
-    heightRatio: 0.5,
-    pagination: false,
-    arrows: false,
-    cover: true,
-    autoWidth: true,
-    autoHeight: true,
-    video: {
-        autoplay: true,
-        mute: true,
-        disableOverlayUI: true,
-        hideControls: true,
-        loop: true,
+var imageSwiper = new Swiper('#image-swiper', {
+    preloadImages: false,
+    lazy: {
+        loadPrevNext: true,
     },
-});
+    effect: 'fade',
+    direction: getDirection(),
+    on: {
+        resize: function () {
+            imageSwiper.changeDirection(getDirection())
+        }
+    },
+})
 
-imageSlider.sync(textSlider).mount(window.splide.Extensions);
+var textSwiper = new Swiper('#text-swiper', {
+    loop: true,
+    loopedSlides: 3,
+    slidesPerView: '2',
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    mousewheel: true,
+    keyboard: {
+      enabled: true
+    },
+    direction: getDirection(),
+    on: {
+        resize: function () {
+            textSwiper.changeDirection(getDirection())
+        },
+        slideChange: function (swiper) {
+            imageSwiper.slideTo(swiper.realIndex)
+            imageSwiper.el.classList.remove('skew')
+            void imageSwiper.el.offsetWidth
+            imageSwiper.el.classList.add('skew')
+        }
+    }
+})
+
+function getDirection() {
+    if (window.innerWidth <= window.innerHeight) {
+        document.querySelectorAll('.swiper-slide-shadow-left, .swiper-slide-shadow-right').forEach(element => {
+            element.remove()
+        })
+        return 'vertical'
+    } else {
+        document.querySelectorAll('.swiper-slide-shadow-top, .swiper-slide-shadow-bottom').forEach(element => {
+            element.remove()
+        })
+        return 'horizontal'
+    }
+}
