@@ -13,16 +13,6 @@
   src: url(/fonts/Montserrat-ExtraBold.ttf)
 }
 
-@font-face {
-  font-family: Montserrat-Medium;
-  src: url(/fonts/Montserrat-Regular.ttf)
-}
-
-@font-face {
-  font-family: Montserrat-Medium;
-  src: url(/fonts/Montserrat-Regular.ttf)
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -198,7 +188,8 @@ button:hover {
 }
 
 .contact100-pic {
-  width: 310px
+  width: 310px;
+  transition: all 300ms cubic-bezier(.03,.98,.52,.99) 0s !important;
 }
 
 .contact100-pic img {

@@ -7,15 +7,14 @@
     display: flex;
     bottom: 0;
     position: fixed;
-    width: 100%;
-    align-self: center;
+    width: 100vw;
+    justify-content: center;
     z-index: 2;
     user-select: none;
     pointer-events: none;
 }
 
 .logo a {
-    margin: auto;
     color: #fff;
     font-size: larger;
     font-family: Hind;

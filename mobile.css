@@ -198,3 +198,17 @@ ul {
         height: 3vw;
     }
 }
+
+@keyframes skew {
+    from {
+        transform: scaleX(1.2) skewX(5deg)
+    }
+
+    to {
+        transform: none
+    }
+}
+
+.skew .swiper-wrapper {
+    /* animation: skew 4s cubic-bezier(.215, .61, .355, 1); */
+}

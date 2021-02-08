@@ -11,50 +11,105 @@
     <meta name="Description"
         content="Reklam ve tanıtım video çekimleri! En yüksek kalite ve en uygun fiyata! Dron video çekim, WEB-tasarım, Fotoğraf çekim, Broşür tasarım, Kartvizit tasarım, Açık hava reklamı tasarım, Etkinlik çekim, Kurumsal video çekim ve diğer türlü çekimler. Detaylı bilgi almak içik iletişime geçiniz." />
     <title>Merch</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/logo.css">
+    <link rel="stylesheet" href="/dialog.css">
 </head>
 
 <body>
-    <div class="flex-row">
-        <div id="dragNdrop">
-            <input type="file" hidden>
-            <img id="normalImg" class="hidden">
-            <img id="blurImg" class="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="17 8 12 3 7 8"></polyline>
-                <line x1="12" y1="3" x2="12" y2="15"></line>
-            </svg>
-        </div>
-        <div class="merch" id="sign">
-            <img class="hidden">
-            <div class="bg" style="background-image: url(img/sign.png);"></div>
-        </div>
+    <div id="dialog">
+        <form id="form">
+            <p class="field">
+                <label translate="NAME" class="label"></label>
+                <input type="text" class="text-input" id="name" name="name" required>
+            </p>
+            <p class="field half">
+                <label translate="EMAIL" class="label"></label>
+                <input type="email" class="text-input" id="email" name="email" required>
+            </p>
+            <p class="field half">
+                <label translate="PHONE" class="label"></label>
+                <input type="tel" class="text-input" id="phone" name="phone" pattern="^\+?\d{0,13}" required>
+            </p>
+            <div class="field">
+                <label translate="SERVICE" class="label"></label>
+                <ul class="checkboxes">
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-0" name="choice" value="0">
+                        <label translate="PHOTO" class="checkbox-label" for="choice-0"></label>
+                    </li>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-1" name="choice" value="1">
+                        <label translate="VIDEO" class="checkbox-label" for="choice-1"></label>
+                    </li>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-2" name="choice" value="2">
+                        <label translate="WEB" class="checkbox-label" for="choice-2"></label>
+                    </li>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-3" name="choice" value="3">
+                        <label translate="SOCIAL" class="checkbox-label" for="choice-3"></label>
+                    </li>
+                    <li class="checkbox">
+                        <input type="checkbox" class="checkbox-input" id="choice-4" name="choice" value="4">
+                        <label translate="OTHER" class="checkbox-label" for="choice-4"></label>
+                    </li>
+                </ul>
+            </div>
+            <p class="field">
+                <label translate="MESSAGE" class="label"></label>
+                <textarea class="textarea" id="about" name="about" rows="5" required></textarea>
+            </p>
+            <p class="field">
+                <button type="button" class="button" onclick="sendEmail(this)"> </button>
+            </p>
+        </form>
     </div>
-    <div class="flex-row">
-        <div class="merch" id="books">
-            <img class="hidden">
-            <img class="hidden">
-            <div class="bg" style="background-image: url(img/books.png);"></div>
+    <div id="content">
+        <button id="button-open-dialog" translate="NEWORDER" onclick="toggleDialog()"></button>
+        <div class="flex-row">
+            <div id="dragNdrop">
+                <input type="file" hidden>
+                <img id="normalImg" class="hidden">
+                <img id="blurImg" class="hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+            </div>
+            <div class="merch" id="sign">
+                <img class="hidden">
+                <div class="bg" style="background-image: url(img/sign.png);"></div>
+            </div>
         </div>
-    </div>
-    <div class="flex-row">
-        <div class="merch" id="shirt">
-            <img class="hidden">
-            <div class="bg" style="background-image: url(img/shirt.png);"></div>
+        <div class="flex-row">
+            <div class="merch" id="books">
+                <img class="hidden">
+                <img class="hidden">
+                <div class="bg" style="background-image: url(img/books.png);"></div>
+            </div>
         </div>
-        <div class="merch" id="phone">
-            <img class="hidden">
-            <div class="bg" style="background-image: url(img/phone.png);"></div>
+        <div class="flex-row">
+            <div class="merch" id="shirt">
+                <img class="hidden">
+                <div class="bg" style="background-image: url(img/shirt.png);"></div>
+            </div>
+            <div class="merch" id="phone">
+                <img class="hidden">
+                <div class="bg" style="background-image: url(img/phone.png);"></div>
+            </div>
         </div>
-    </div>
-    <div class="logo">
-        <a href="../">CAPTUR<a2>AD</a2></a>
+        <div class="logo">
+            <a href="../">CAPTUR<a2>AD</a2></a>
+        </div>
     </div>
 </body>
 
 <script src="index.js"></script>
+<script src="/dialog.js"></script>
+<script src="/translator.js"></script>
 
 </html>
