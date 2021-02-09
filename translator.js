@@ -8,7 +8,6 @@ function translateTo(lang) {
                 element.innerText = json[0][element.getAttribute('translate')];
             }
         });
-        localStorage.setItem('lang', lang);
         document.documentElement.lang = lang;
         if (typeof textSlider != 'undefined') {
             textSlider.go(textSlider.index);
@@ -16,14 +15,9 @@ function translateTo(lang) {
     });
 }
 
-if (localStorage.getItem('lang')) {
-    translateTo(localStorage.getItem('lang'));
+if (navigator.language.split('-')[0] == 'ru') {
+    translateTo('ru');
 }
 else {
-    if (navigator.language.split('-')[0] == 'ru') {
-        translateTo('ru');
-    }
-    else {
-        translateTo('tr');
-    }
+    translateTo('tr');
 }

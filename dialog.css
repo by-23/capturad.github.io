@@ -3,7 +3,7 @@
 }
 
 #content {
-  position: fixed;
+  position: absolute;
   transition: var(--transition);
   width: 100vw;
   height: 100vh;

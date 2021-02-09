@@ -35,7 +35,9 @@ a {
 }
 
 #menu {
-    height: 100vh;
+    position: fixed;
+    height: 100%;
+    width: 100%;
     color: #fafafa;
 }
 
@@ -50,8 +52,8 @@ a {
 
 #menu li a {
     font-family: 'Whitney Light';
-    font-size: xxx-large;
-    font-weight: bold;
+    font-size: 6vh;
+    font-weight: 800;
     border-radius: 100vh;
     padding: 4vh;
     cursor: pointer;

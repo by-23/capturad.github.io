@@ -217,6 +217,9 @@ ul {
         width: 5vw;
         height: 5vw;
     }
+    .logo {
+        display: none;
+    }
 }
 
 @media (orientation:landscape) {
