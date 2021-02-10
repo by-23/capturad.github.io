@@ -1,4 +1,10 @@
 body {
     margin: 0;
-    background-color: black;
+    background-color: #000;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+#nanogallery {
+    margin: 8px;
 }

@@ -3,20 +3,18 @@
     --transition: .45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 body {
     margin: 0;
-    background-color: #eee;
+    background-color: #000;
     overflow: overlay;
+    transition: var(--transition);
+}
+
+button,
+button:hover {
+    border: 0;
+    padding: 0;
+    outline: 0;
 }
 
 img {
@@ -29,11 +27,19 @@ img.hidden {
     opacity: 0;
 }
 
+.disable-hover {
+    pointer-events: none;
+}
+
 .flex-row {
     display: flex;
     margin: 0 auto;
     align-items: center;
-    width: 60rem;
+    max-width: 60rem;
+}
+
+.merch {
+    background-color: #eee;
 }
 
 .merch,
@@ -76,7 +82,8 @@ img.hidden {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #eee;
+    z-index: 1;
 }
 
 #dragNdrop img {
@@ -88,11 +95,9 @@ img.hidden {
     position: absolute;
     width: 15%;
     border: dashed 0.4rem currentColor;
-    box-shadow: 0 0 0 150vh transparent;
     padding: 15%;
     border-radius: 25%;
     transition: var(--transition);
-    z-index: 1;
 }
 
 @keyframes loading {
@@ -101,9 +106,12 @@ img.hidden {
     }
 }
 
+#dragNdrop.loading {
+    box-shadow: 0 0 0 150vh black;
+}
+
 #dragNdrop.loading svg {
     opacity: 1 !important;
-    box-shadow: 0 0 0 150vh black;
     border-radius: 50%;
     color: transparent !important;
     padding: 15% !important;

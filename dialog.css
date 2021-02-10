@@ -5,8 +5,7 @@
 #content {
   position: absolute;
   transition: var(--transition);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
 }
 
 #content.zoom-out {
@@ -17,6 +16,100 @@
 #content.zoom-in {
   transform: scale(3);
   filter: contrast(0) brightness(0.15);
+}
+
+#button-open-dialog {
+  position: fixed;
+  border: 0;
+  padding: 0;
+  color: white;
+  font-size: x-large;
+  font-family: "california";
+  background-color: #181a1b;
+  z-index: 2;
+  outline: none;
+}
+
+@media (orientation:portrait) {
+  #button-open-dialog {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 15vh;
+    width: 10vw;
+    border-radius: 3vh 0 0 3vh;
+  }
+}
+
+@media (orientation:landscape) {
+  #button-open-dialog {
+    bottom: 0;
+    width: 15vw;
+    height: 10vh;
+    border-radius: 3vw 3vw 0 0;
+  }
+}
+
+#dialog {
+  overflow: auto;
+  background-color: #111111;
+}
+
+#form {
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media (orientation:portrait) {
+  #form .field {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}
+
+@media (orientation:landscape) {
+  #form .field {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
+
+@media (orientation:landscape) {
+  #form .label {
+    font-size: 1.75vw;
+  }
+}
+
+#button-close-dialog {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  z-index: 1;
+  background-color: white;
+  border: none;
+  color: black;
+  padding: .5rem 0.75rem;
+  border-radius: 0 0 0 50%;
+  outline: none;
+}
+
+@media (orientation:portrait) {
+
+  #button-close-dialog svg,
+  #button-open-dialog svg {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+
+@media (orientation:landscape) {
+
+  #button-close-dialog svg,
+  #button-open-dialog svg {
+    width: 3vw;
+    height: 3vw;
+  }
 }
 
 #dialog {

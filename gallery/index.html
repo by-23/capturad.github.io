@@ -15,67 +15,10 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="/dialog.css">
     <link rel="stylesheet" href="/logo.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
 </head>
 
 <body>
-    <div id="dialog">
-        <form id="form">
-            <button type="button" id="button-close-dialog" onclick="toggleDialog()">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times"
-                    class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 352 512">
-                    <path fill="currentColor"
-                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
-                    </path>
-                </svg>
-            </button>
-            <p class="field">
-                <label translate="NAME" class="label"></label>
-                <input type="text" class="text-input" id="name" name="name" required>
-            </p>
-            <p class="field">
-                <label translate="EMAIL" class="label"></label>
-                <input type="email" class="text-input" id="email" name="email" required>
-            </p>
-            <p class="field">
-                <label translate="PHONE" class="label"></label>
-                <input type="tel" class="text-input" id="phone" name="phone" pattern="^\+?\d{0,13}" required>
-            </p>
-            <div class="field">
-                <label translate="SERVICE" class="label"></label>
-                <ul class="checkboxes">
-                    <li class="checkbox">
-                        <input type="checkbox" class="checkbox-input" id="choice-0" name="choice" value="0">
-                        <label translate="PHOTO" class="checkbox-label" for="choice-0"></label>
-                    </li>
-                    <li class="checkbox">
-                        <input type="checkbox" class="checkbox-input" id="choice-1" name="choice" value="1">
-                        <label translate="VIDEO" class="checkbox-label" for="choice-1"></label>
-                    </li>
-                    <li class="checkbox">
-                        <input type="checkbox" class="checkbox-input" id="choice-2" name="choice" value="2">
-                        <label translate="WEB" class="checkbox-label" for="choice-2"></label>
-                    </li>
-                    <li class="checkbox">
-                        <input type="checkbox" class="checkbox-input" id="choice-3" name="choice" value="3">
-                        <label translate="SOCIAL" class="checkbox-label" for="choice-3"></label>
-                    </li>
-                    <li class="checkbox">
-                        <input type="checkbox" class="checkbox-input" id="choice-4" name="choice" value="4">
-                        <label translate="OTHER" class="checkbox-label" for="choice-4"></label>
-                    </li>
-                </ul>
-            </div>
-            <p class="field">
-                <label translate="MESSAGE" class="label"></label>
-                <textarea class="textarea" id="about" name="about" rows="5" required></textarea>
-            </p>
-            <p class="field">
-                <button type="button" class="button" onclick="sendEmail(this)"> </button>
-            </p>
-        </form>
-    </div>
     <div id="content">
         <div id="image-swiper" class="swiper-container">
             <ul class="swiper-wrapper">
@@ -114,8 +57,7 @@
         </div>
     </div>
 </body>
-<script src="index.js"></script>
-<script src="/dialog.js"></script>
+<script src="gallery.js"></script>
 <script src="/translator.js"></script>
 
 </html>

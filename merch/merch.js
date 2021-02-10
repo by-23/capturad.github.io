@@ -34,17 +34,22 @@ function setBackgroundFromFile(file) {
         let reader = new FileReader()
         reader.onload = (e) => {
 
-            dragNdrop.classList.add('loading')
+            imgList.forEach(img => {
+                img.classList.add('hidden')
+            })
             setTimeout(() => {
                 imgList.forEach(img => {
                     img.src = e.target.result
                     img.classList.remove('hidden')
                 })
                 dragNdrop.classList.add('selected')
-                
-                dragNdrop.classList.remove('loading')
-            }, 2000);
+            }, 500);
         }
         reader.readAsDataURL(file)
     }
 }
+
+// window.addEventListener('scroll', function () {
+//     document.body.focus()
+//     console.log("Focus")
+// }, false); 

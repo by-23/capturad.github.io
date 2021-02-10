@@ -26,6 +26,15 @@ html {
   user-select: none
 }
 
+body {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(175deg, #B3E5FC, #01579B);
+}
+
 a {
   font-family: Montserrat-Regular;
   font-size: 14px;
@@ -158,29 +167,12 @@ button:hover {
   cursor: pointer
 }
 
-.container-contact100 {
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(175deg, #B3E5FC, #01579B)
-}
-
 .wrap-contact100 {
   width: 90vw;
   height: 90vh;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -276,10 +268,6 @@ textarea.input100 {
 }
 
 .symbol-input100 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   align-items: center;
   position: absolute;
@@ -305,10 +293,6 @@ textarea.input100 {
 
 .container-contact100-form-btn {
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -324,10 +308,6 @@ textarea.input100 {
   font-size: 15px;
   line-height: 1.5;
   color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   justify-content: center;
   align-items: center;
