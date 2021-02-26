@@ -8,8 +8,16 @@
     src: url('../fonts/Hind.ttf') format('truetype')
 }
 
-:root {
-    --transition: .25s cubic-bezier(0.83, 1.93, 0, -0.31);
+@media (orientation:landscape) {
+    :root {
+        --transition: .25s cubic-bezier(0.83, 1.93, 0, -0.31);
+    }
+}
+
+@media (orientation:portrait) {
+    :root {
+        --transition: .15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
 
 * {
@@ -25,6 +33,9 @@
 body {
     margin: 0;
     background-color: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -35,10 +46,8 @@ a {
 }
 
 #menu {
-    position: fixed;
-    height: 100%;
+    flex: 1;
     width: 100%;
-    color: #fafafa;
 }
 
 #menu,
@@ -57,54 +66,26 @@ a {
     border-radius: 100vh;
     padding: 4vh;
     cursor: pointer;
-    border: solid 0.4rem transparent;
+    border: solid 0.4rem currentColor;
 }
 
-@keyframes a-neon {
-
-    0%,
-    100% {
-        filter: drop-shadow(0 0 .4rem blue);
-    }
-
-    33% {
-        filter: drop-shadow(0 0 .4rem green);
-    }
-
-    66% {
-        filter: drop-shadow(0 0 .4rem red);
+@media (orientation:landscape) {
+    a:not(:hover) {
+        border-color: transparent !important;
+        filter: none !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
     }
 }
 
-a:hover {
-    animation: a-neon 15s infinite both;
-}
-
-@keyframes li-neon {
-
-    0%,
-    100% {
-        filter: drop-shadow(0 0 2rem blue);
-        text-shadow: 0 0 1rem blue;
-        box-shadow: 0 0 2rem blue, inset 0 0 2rem blue;
+@media (orientation:portrait) {
+    a:active {
+        border-color: transparent !important;
+        filter: none !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+        transform: scale(.75);
     }
-
-    33% {
-        filter: drop-shadow(0 0 2rem green);
-        text-shadow: 0 0 1rem green;
-        box-shadow: 0 0 2rem green, inset 0 0 2rem green;
-    }
-
-    66% {
-        filter: drop-shadow(0 0 2rem red);
-        text-shadow: 0 0 1rem red;
-        box-shadow: 0 0 2rem red, inset 0 0 2rem red;
-    }
-}
-
-#menu li a:hover {
-    animation: li-neon 15s infinite both;
-    border-color: currentColor;
 }
 
 footer {
@@ -151,5 +132,9 @@ footer .info a {
 @media (orientation:portrait) {
     #menu {
         flex-direction: column;
+    }
+
+    footer {
+        position: initial;
     }
 }
