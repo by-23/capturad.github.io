@@ -33,6 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(175deg, #B3E5FC, #01579B);
+  overflow: hidden;
 }
 
 a {
