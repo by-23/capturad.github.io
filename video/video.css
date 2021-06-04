@@ -3,7 +3,6 @@ body {
     padding: 0;
     overflow: hidden;
     background-image: url(../img/bg.webp);
-    backdrop-filter: blur(4px);
 }
 
 video {
@@ -17,7 +16,7 @@ video {
 }
 
 .items {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -25,13 +24,12 @@ video {
 }
 
 .items .item {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80vw;
     height: 75vh;
-    /* border-radius: 50%; */
     transition: all 300ms ease-in-out;
     z-index: -1;
     opacity: 0;
@@ -61,7 +59,7 @@ video {
 }
 
 .items .button-container {
-    position: absolute;
+    position: fixed;
     transform: translate(-50%, -50%);
     width: 100vw;
     height: 86.7vh;
@@ -82,21 +80,14 @@ video {
     opacity: 1;
 }
 
-/* .button-container .button:before {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: #000000;
-    border-radius: 50%;
-    z-index: -99;
-    margin: auto;
-} */
-
 .button-container .button:nth-child(1) {
     float: left;
 }
 
 .button-container .button:nth-child(2) {
     float: right;
+}
+
+.plyr {
+    height: 100%;
 }
